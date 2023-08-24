@@ -13,7 +13,10 @@
   "parserOptions": {
     "requireConfigFile": false,
     "ecmaVersion": 2018,
-    "sourceType": "module"
+    "sourceType": "module",
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
   },
   "extends": ["airbnb", "plugin:react/recommended", "plugin:react-hooks/recommended"],
   "plugins": ["react"],
