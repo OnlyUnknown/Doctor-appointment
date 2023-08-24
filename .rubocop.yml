@@ -8,6 +8,7 @@ AllCops:
     - "doctor_appointment_backend/Rakefile"
     - "doctor_appointment_backend/node_modules/**/*"
     - "doctor_appointment_frontend/*"
+    - "node_modules/**/*"
 
   DisplayCopNames: true
 

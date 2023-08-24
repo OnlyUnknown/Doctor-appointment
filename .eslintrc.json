@@ -29,6 +29,7 @@
     }
   ],
   "ignorePatterns": [
+    "doctor_appointment_backend/",
     "dist/",
     "build/"
   ]
