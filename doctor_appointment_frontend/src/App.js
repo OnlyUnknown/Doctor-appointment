@@ -1,27 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Nav from './components/navigation';
+import Add from './components/add';
+import Doctors from './components/doctors';
+import Delete from './components/delete';
+import Myreservation from './components/myreservation';
+import Reserve from './components/reserveForm';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <BrowserRouter>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Doctors />} />
+          <Route path="add_doctor" element={<Add />} />
+          <Route path="delete" element={<Delete />} />
+          <Route path="my_reservation" element={<Myreservation />} />
+          <Route path="reserve" element={<Reserve />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
