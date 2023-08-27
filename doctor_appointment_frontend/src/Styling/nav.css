@@ -71,4 +71,6 @@ nav {
     width: 100%;
   }
 
-  
+  .active-link {
+    background: #0000d3;
+  }

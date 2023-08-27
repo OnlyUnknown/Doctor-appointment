@@ -1,16 +1,20 @@
-import "../Styling/nav.css"
+import "../Styling/nav.css";
+import { NavLink } from 'react-router-dom';
+
 function Nav() {
-    return <section>
-    <nav className="blend">
-      <ul>
-        <li><a href="/">Doctors</a></li>
-        <li><a href="reserve">Reserve</a></li>
-        <li><a href="my_reservation">My reservations</a></li>
-        <li><a href="add_doctor">Add a Doctor</a></li>
-        <li><a href="delete">Delete a Doctor</a></li>
-      </ul>
-    </nav>
-  </section>;
-  }
-  
-  export default Nav;
+  return (
+    <section>
+      <nav className="blend">
+        <ul>
+          <li><NavLink to="/" className={({isActive}) => (isActive ? "active-link" : 'none')}>Doctors</NavLink></li>
+          <li><NavLink className={({isActive}) => (isActive ? "active-link" : 'none')} to="/reserve">Reserve</NavLink></li>
+          <li><NavLink className={({isActive}) => (isActive ? "active-link" : 'none')} to="/my_reservation">My reservations</NavLink></li>
+          <li><NavLink className={({isActive}) => (isActive ? "active-link" : 'none')} to="/add_doctor">Add a Doctor</NavLink></li>
+          <li><NavLink className={({isActive}) => (isActive ? "active-link" : 'none')} to="/delete">Delete a Doctor</NavLink></li>
+        </ul>
+      </nav>
+    </section>
+  );
+}
+
+export default Nav;
