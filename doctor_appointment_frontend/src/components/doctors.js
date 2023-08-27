@@ -1,7 +1,9 @@
 function Doctors() {
-    return <section>
+  return (
+    <section>
       Doctors List
-  </section>;
-  }
-  
-  export default Doctors;
+    </section>
+  );
+}
+
+export default Doctors;

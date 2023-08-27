@@ -1,7 +1,9 @@
 function Add() {
-    return <section>
-        Add Doctor
-  </section>;
-  }
-  
-  export default Add;
+  return (
+    <section>
+      Add Doctor
+    </section>
+  );
+}
+
+export default Add;
