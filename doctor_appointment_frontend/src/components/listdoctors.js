@@ -3,16 +3,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 /* eslint-enable import/no-extraneous-dependencies */
+import '../css/home.css';
 
 export default function ListDoctors({ list }) {
   return (
     <div className="flex flex-wrap justify-center">
       {list.map((doctor) => (
         <Link to={`/Detail/${doctor.id}`}>
-          <div key={doctor.id} className="flex flex-col items-center justify-center w-64 h-64 m-4 bg-white rounded-lg shadow-md">
-            <img className="w-32 h-32 rounded-full" src={doctor.image} alt={doctor.name} />
-            <h1 className="text-xl font-bold">{doctor.name}</h1>
-            <p className="text-gray-600">{doctor.speciality}</p>
+          <div key={doctor.id} className="flex flex-col  gap-4 p-2 items-center justify-center w-64 h-64 m-4 bg-white rounded-lg shadow-md">
+            <img className="w-32 h-[232px] home-img " src={doctor.image} alt={doctor.name} />
+            <div className="flex flex-col">
+              <h1 className="text-xl font-bold">{doctor.name}</h1>
+              <p className="text-gray-600">{doctor.speciality}</p>
+            </div>
+            <div className="border border-dotted border-gray-400 h-1 w-3/4"></div>
             <p className="text-gray-400 text-center">{doctor.description}</p>
             <div className="flex flex-row gap-3 items-center justify-center">
               <svg className="w-6 h-6 p-1 border-2 border-gray-500 rounded-full hover:bg-blue-400 hover:text-white text-gray-600 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="gray" viewBox="0 0 8 19">
