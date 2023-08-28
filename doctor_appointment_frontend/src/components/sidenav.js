@@ -1,19 +1,24 @@
 import '../Styling/sidenav.css';
 import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
-
 function SideNav() {
-    const [navOpen, setNavOpen] = useState(false);
     const openNav = () => {
-
-      if (!navOpen) {
+        if(document.getElementById("mySidenav").style.width == "250px"){
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0px";
+            document.getElementsByClassName("toggle-button")[0].style.marginLeft = "0px";
+            document.getElementsByClassName("toggle-button2")[0].style.marginLeft = "0px";
+            document.getElementsByClassName("toggle-button3")[0].style.marginLeft = "0px";
+            document.getElementsByClassName("toggle-button3")[0].style.transform = "rotateY(180deg)";
+    } else{
         document.getElementById("mySidenav").style.width = "250px";
-
-      } else {
-        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementsByClassName("toggle-button")[0].style.marginLeft = "250px";
+        document.getElementsByClassName("toggle-button2")[0].style.marginLeft = "250px";
+        document.getElementsByClassName("toggle-button3")[0].style.marginLeft = "250px";
+        document.getElementsByClassName("toggle-button3")[0].style.transform = "rotateY(0deg)";
 
       }
-      setNavOpen(!navOpen);
     };
   return (
 <section>
@@ -23,13 +28,12 @@ function SideNav() {
           <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/my_reservation">My Appointment</NavLink>
           <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/add_doctor">Add a Doctor</NavLink>
           <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/delete">Delete a Doctor</NavLink>
-        
-  <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/reserve">About</NavLink>
-
 </div>
 <div>
     
-<button onClick={openNav}>Toggle Nav</button>
+<img src={process.env.PUBLIC_URL + "/icons8-semi-circle-64.png"} className="toggle-button" onClick={openNav}/>
+<img src={process.env.PUBLIC_URL + "/icons8-square-50.png"} className="toggle-button2" onClick={openNav}/>
+<img src={process.env.PUBLIC_URL + "/icons8-arrow-100.png"} className="toggle-button3" onClick={openNav}/>
 </div>
 </section>
   );
