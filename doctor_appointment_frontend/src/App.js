@@ -12,7 +12,7 @@ function App() {
     <div className="App">
 
       <BrowserRouter>
-      <SideNav/>
+        <SideNav />
         <Routes>
           <Route path="/" element={<Doctors />} />
           <Route path="add_doctor" element={<Add />} />
