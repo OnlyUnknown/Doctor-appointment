@@ -1,0 +1,85 @@
+section {
+  background: rgb(46, 99, 214);
+}
+
+nav {
+  width: 80%;
+  margin: 0 auto;
+  background: rgb(46, 99, 214);
+  padding: 0 0;
+  box-shadow: 0 5px 0 #dedede;
+}
+
+/* By Dominik Biedebach @domobch */
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+nav ul li a,
+nav ul li a::after,
+nav ul li a::before {
+  transition: all 0.5s;
+}
+
+nav ul li a:hover {
+  color: #555;
+}
+
+nav.blend ul li a {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+nav.blend ul li a:hover {
+  color: #fff;
+}
+
+nav.blend ul li a::before,
+nav.blend ul li a::after {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background: #0000d3;
+  transition: all 0.5s;
+  margin: auto;
+  content: '.';
+  color: transparent;
+  z-index: -1;
+  opacity: 0.75;
+}
+
+nav.blend ul li a::before {
+  left: 0;
+}
+
+nav.blend ul li a::after {
+  right: 0;
+}
+
+nav.blend ul li a:hover::after,
+nav.blend ul li a:hover::before {
+  width: 100%;
+}
+
+.active-link {
+  background: #0000d3;
+}
