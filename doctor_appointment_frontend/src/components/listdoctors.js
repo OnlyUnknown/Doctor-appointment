@@ -1,7 +1,7 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import PropTypes from 'prop-types';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 /* eslint-enable import/no-extraneous-dependencies */
 import '../css/home.css';
 

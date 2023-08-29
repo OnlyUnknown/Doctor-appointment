@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-/* eslint-enable import/no-extraneous-dependencies */
 import ListDoctors from './listdoctors';
 import '../css/home.css';
 import list from './doctors';
 
 export default function Home() {
-
-
   const [showList, setShowList] = useState(list.doctors.slice(0, 3));
   const [index, setIndex] = useState(0);
   const onRightClick = () => {

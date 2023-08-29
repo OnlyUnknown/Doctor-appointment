@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, useParams} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import list from './doctors';
 
 export default function Detail() {
