@@ -1,12 +1,12 @@
 section {
-  background: rgb(46, 99, 214);
+  background: rgb(46 99 214);
 }
 
 nav {
   width: 80%;
   margin: 0 auto;
-  background: rgb(46, 99, 214);
-  padding: 0 0;
+  background: rgb(46 99 214);
+  padding: 0;
   box-shadow: 0 5px 0 #dedede;
 }
 
