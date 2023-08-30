@@ -7,24 +7,24 @@ const initialState = {
 }
 
 const fetchAppointments = createAsyncThunk('appoitnment/fetchAppointments', () =>{
-    axios
+    return axios
         .get('https://jsonplaceholder.typicode.com/users')
-        .then((response) => response.data.map((user) => user.id))
+        .then((response) => response.data.map((user) => user))
 })
 
 const appointmentSlice = createSlice({
     name: 'appoitment',
     initialState,
     extraReducers: builder => {
-        builder.addCase(fetchAppoitments.pending, (state) =>{
+        builder.addCase(fetchAppointments.pending, (state) =>{
             state.loading = true
         })
-        builder.addCase(fetchAppoitments.fulfilled, (state, action) =>{
+        builder.addCase(fetchAppointments.fulfilled, (state, action) =>{
             state.loading = false
             state.appointments = action.payload
             state.error = ''
         })
-        builder.addCase(fetchAppoitments.rejected, (state, action) =>{
+        builder.addCase(fetchAppointments.rejected, (state, action) =>{
             state.loading = false
             state.appointments = []
             state.error = action.error.message
