@@ -1,6 +1,6 @@
 function Add() {
   return (
-    <section>
+    <section id="main">
       Add Doctor
     </section>
   );
