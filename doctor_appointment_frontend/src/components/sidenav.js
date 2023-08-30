@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import '../Styling/sidenav.css';
 import { NavLink } from 'react-router-dom';
 
