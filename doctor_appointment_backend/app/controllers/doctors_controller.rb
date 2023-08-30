@@ -10,12 +10,12 @@ class DoctorsController < ApplicationController
   end
 
   def create
-    @doctor = Doctor.new(doctor_params)
+    @doctor = Doctor.new(user_params)
 
-    if @doctor.save
-      render json: @doctor, status: :created
+    if @Doctor.save
+      render json: @Doctor, status: :created
     else
-      render json: @doctor.errors, status: :unprocessable_entity
+      render json: @Doctor.errors, status: :unprocessable_entity
     end
   end
 

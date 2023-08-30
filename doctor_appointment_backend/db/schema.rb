@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema[7.0].define(version: 20_230_829_130_458) do
+ActiveRecord::Schema[7.0].define(version: 20_230_829_181_241) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -55,11 +55,13 @@ ActiveRecord::Schema[7.0].define(version: 20_230_829_130_458) do
     t.string 'image'
   end
 
-  create_table 'doctors_users', id: false, force: :cascade do |t|
+  create_table 'doctors_users', force: :cascade do |t|
     t.bigint 'user_id', null: false
     t.bigint 'doctor_id', null: false
     t.string 'city'
-    t.date 'appontment_date'
+    t.date 'appointment_date'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
     t.index %w[doctor_id user_id], name: 'index_doctors_users_on_doctor_id_and_user_id'
     t.index %w[user_id doctor_id], name: 'index_doctors_users_on_user_id_and_doctor_id'
   end
