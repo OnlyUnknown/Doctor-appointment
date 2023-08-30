@@ -22,9 +22,9 @@ function SideNav() {
   };
   return (
     <section>
-      <div id="mySidenav" className="sidenav">
+      <div id="mySidenav" className="sidenav fixed">
         <NavLink to="/" className={({ isActive }) => (isActive ? 'active-link' : 'none')}>Doctors</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/reserve">Appoint</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/reservation">Appoint</NavLink>
         <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/my_reservation">My Appointment</NavLink>
         <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/add_doctor">Add a Doctor</NavLink>
         <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/delete">Delete a Doctor</NavLink>

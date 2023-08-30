@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-body {
-  background-image: linear-gradient(#00c8ff, #2066d6); /* customize colors here */
-  background-attachment: fixed;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex justify-end item-end">
+    <div className="flex justify-end item-end ml-[250px]">
       <div className="relative flex h-fit w-full flex-col items-center justify-center">
         <h1 className="absolute text-3xl font-bold top-[70px]">LATEST DOCTORS</h1>
         <p className="absolute text-gray-400 top-[100px]">Please select a doctor</p>

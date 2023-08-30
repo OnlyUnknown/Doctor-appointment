@@ -30,6 +30,8 @@
   font-size: 25px;
   display: block;
   transition: 0.3s;
+  font-weight: bold;
+  color: #525151;
 }
 
 .sidenav a:hover {
@@ -79,10 +81,14 @@
 }
 
 .active-link {
-  background: linear-gradient(#00c8ff, #025af1); /* customize colors here */
+  background: #97bf0f;
   color: white;
 }
 
 #main {
   transition: 1s;
+}
+
+#mySidenav {
+  width: 250px;
 }
