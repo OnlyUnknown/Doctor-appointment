@@ -11,6 +11,7 @@ class Api::V1::UsersController < ApplicationController
       render json: @user, status: :created
     else
       render json: @use.errors.full_messages
+    end
   end
 
   def show
