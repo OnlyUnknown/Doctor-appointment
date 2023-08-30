@@ -6,6 +6,7 @@ import Delete from './components/delete';
 import Home from './components/home';
 import Detail from './components/detail';
 import Reservation from './components/reservation';
+import MyReservation from './components/my_reservation';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/reservation/:id" element={<Reservation />} />
           <Route path="/reservation" element={<Reservation />} />
+          <Route path="/my_reservation" element={<MyReservation />} />
         </Routes>
       </BrowserRouter>
     </div>
