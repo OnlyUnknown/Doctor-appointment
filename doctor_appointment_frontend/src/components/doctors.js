@@ -1,6 +1,6 @@
 function Doctors() {
   return (
-    <section>
+    <section id="main">
       Doctors List
     </section>
   );

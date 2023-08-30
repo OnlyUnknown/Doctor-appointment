@@ -1,6 +1,6 @@
 function ReserveForm() {
   return (
-    <section>
+    <section id="main">
       Reserve Form
     </section>
   );

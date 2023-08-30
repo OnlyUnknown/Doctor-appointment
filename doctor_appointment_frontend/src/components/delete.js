@@ -1,6 +1,6 @@
 function Delete() {
   return (
-    <section>
+    <section id="main">
       Delete Doctor
     </section>
   );

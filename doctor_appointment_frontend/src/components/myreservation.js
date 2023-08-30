@@ -1,6 +1,6 @@
 function Myreservation() {
   return (
-    <section>
+    <section id="main">
       Myreservation
     </section>
   );
