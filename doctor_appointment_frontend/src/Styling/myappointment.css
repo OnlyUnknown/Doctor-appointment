@@ -1,75 +1,71 @@
- /* Your custom styles */
- .tableContainer {
-    display: flex;
-    justify-content: center;
-    background-color: #367102;
-    border-radius: 20px;
-    height: 433px;
-    padding: 0 10px 10px 10px;
-    overflow: scroll;
-    color: rgba(255, 255, 255, 0.818);
-  }
+/* Your custom styles */
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #367102;
+  border-radius: 20px;
+  height: 433px;
+  padding: 0 10px 10px 10px;
+  overflow: scroll;
+  color: rgba(255, 255, 255, 0.818);
+}
 
-  .tableContainer::-webkit-scrollbar {
-    display: none;
-  }
+.tableContainer::-webkit-scrollbar {
+  display: none;
+}
 
-  /* Table header sticky style */
-  table thead {
-    position: sticky;
-    top: 0;
-    margin: 0;
-  }
+/* Table header sticky style */
+table thead {
+  position: sticky;
+  top: 0;
+  margin: 0;
+}
 
-  /* Original table styles */
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #ddd;
-  }
+/* Original table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
 
-  th, td {
-    text-align: left;
-    padding: 8px;
-  }
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
 
-  th {
-    background-color: #3ba303;
-  }
+th {
+  background-color: #3ba303;
+}
 
-  tr:nth-child(even) {
-    background-color: gray;
-  }
+tr:nth-child(even) {
+  background-color: gray;
+}
 
-  tr:hover {
-    background: #868eff;
-    opacity: .8;
-  }
+tr:hover {
+  background: #868eff;
+  opacity: 0.8;
+}
 
+#main {
+  display: flex;
+  flex-direction: column;
+  transition: 1s;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 130px;
+  margin-bottom: 200px;
+}
+
+@media only screen and (max-width: 700px) {
   #main {
-    
-
     display: flex;
     flex-direction: column;
-    transition: 1s;  
-     margin-left: 100px;
-    margin-right: 100px;
     transition: 1s;
-    margin-top: 130px;
-    margin-bottom: 200px;
+    margin-left: 0;
+    margin-right: 0;
+    transition: 1s;
+    margin-top: 50px;
+    margin-bottom: 00;
   }
-
-  @media only screen and (max-width: 700px){
-    #main {
-    
-      display: flex;
-      flex-direction: column;
-      transition: 1s;  
-       margin-left: 0px;
-      margin-right: 0px;
-      transition: 1s;
-      margin-top: 50px;
-      margin-bottom: 00px;
-    }
-  }
-  
+}

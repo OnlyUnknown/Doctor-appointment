@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import '../Styling/sidenav.css';
 import { NavLink } from 'react-router-dom';
-function SideNav() {
 
+function SideNav() {
   const openNav = () => {
     if (document.getElementById('mySidenav').style.width === '250px' && window.innerWidth > 700) {
       document.getElementById('mySidenav').style.width = '0';
@@ -11,7 +11,7 @@ function SideNav() {
       document.getElementsByClassName('toggle-button2')[0].style.marginLeft = '0px';
       document.getElementsByClassName('toggle-button3')[0].style.marginLeft = '0px';
       document.getElementsByClassName('toggle-button3')[0].style.transform = 'rotateY(180deg)';
-    } else if(window.innerWidth > 700) {
+    } else if (window.innerWidth > 700) {
       document.getElementById('mySidenav').style.width = '250px';
       document.getElementById('main').style.marginLeft = '250px';
       document.getElementsByClassName('toggle-button')[0].style.marginLeft = '250px';
