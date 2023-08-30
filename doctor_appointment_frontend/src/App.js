@@ -1,18 +1,18 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Nav from './components/navigation';
 import Add from './components/add';
 import Doctors from './components/doctors';
 import Delete from './components/delete';
 import Myreservation from './components/myreservation';
 import Reserve from './components/reserveForm';
+import SideNav from './components/sidenav';
 
 function App() {
   return (
     <div className="App">
 
       <BrowserRouter>
-        <Nav />
+        <SideNav />
         <Routes>
           <Route path="/" element={<Doctors />} />
           <Route path="add_doctor" element={<Add />} />

@@ -1,0 +1,18 @@
+Index: doctor_appointment_frontend/src/components/reservation.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import  React from 'react';\nimport '../css/home.css'\nimport doc5 from './doc5.jpg'\n\nconst Reservation = () => {\n    return (\n        <div className=\"reservation-container h-screen\" style={{backgroundImage: `url(${doc5})`, backgroundSize: 'cover'}}>\n          <div className=\"w-full h-screen reservation flex flex-col justify-center items-center text-white\">\n            <h1 className=\"text-3xl tracking-2xl font-bold space-x-1 mb-6\">MAKE AN APPOINTMENT WITH A DOCTOR </h1>\n            <hr className=\"text-white w-3/4\" />\n          </div>\n        </div>\n    );\n}\n\nexport default Reservation;\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/doctor_appointment_frontend/src/components/reservation.js b/doctor_appointment_frontend/src/components/reservation.js
+--- a/doctor_appointment_frontend/src/components/reservation.js	(revision 0d3f69031bf8b2696dffb395a725c933f845a32f)
++++ b/doctor_appointment_frontend/src/components/reservation.js	(date 1693292376585)
+@@ -9,6 +9,7 @@
+             <h1 className="text-3xl tracking-2xl font-bold space-x-1 mb-6">MAKE AN APPOINTMENT WITH A DOCTOR </h1>
+             <hr className="text-white w-3/4" />
+           </div>
++          <form action="Post"
+         </div>
+     );
+ }
