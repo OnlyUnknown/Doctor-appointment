@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  speciality: MyString
+  description: MyText
+  experience: 1
+  fees: 9.99
+
+two:
+  name: MyString
+  speciality: MyString
+  description: MyText
+  experience: 1
+  fees: 9.99
