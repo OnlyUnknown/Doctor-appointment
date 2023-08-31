@@ -1,5 +1,0 @@
-class DoctorSerializer < ActiveModel::DoctorSerializer
-include Rails.application.routes.Url_helpers
-
-attributes :name, :speciality, :description, :years_of_experience, :image
-has_many :doctors_users
