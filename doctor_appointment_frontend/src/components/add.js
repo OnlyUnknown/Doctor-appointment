@@ -61,7 +61,7 @@ function DoctorForm() {
 
       try {
         const response = await axios.post(
-          'http://localhost:3000/doctors',
+          'http://localhost:3000/api/v1/doctors',
           formData,
           {
             headers: {

@@ -4,45 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06b8e0a8-86fc-452b-a5e3-332879d07c0d" name="Changes" comment="replace my-reservation component">
-      <change afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/serializers/doctor_serializer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointment_backend/db/migrate/20230831171250_remove_image_column.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Doctor-appointment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Doctor-appointment.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29-Aug-23_22_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29-Aug-23_22_34__Changes_.xml" afterDir="false" />
+    <list default="true" id="06b8e0a8-86fc-452b-a5e3-332879d07c0d" name="Changes" comment="database connection check">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/assets/images/doctor-placeholder-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/assets/images/default_image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/doctors_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/models/doctor.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/models/doctor.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/models/doctor_serializer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/models/doctors_user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/models/doctors_user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/config/boot.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/config/boot.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/config/database.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/config/initializers/cors.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/config/initializers/cors.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/db/migrate/20230829181241_create_doctors_users.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/appointmentSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/appointmentSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/doctorSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/doctorSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/delete.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/delete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/myappointment.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/myappointment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/reservation.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/reservation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/sidenav.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/sidenav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693354635126</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="database connection check">
+      <option name="closed" value="true" />
+      <created>1693508470659</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693508470659</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,6 +304,7 @@
     <MESSAGE value="combine files" />
     <MESSAGE value="replace my-reservation component" />
     <MESSAGE value="style nav &amp; home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="style nav &amp; home page" />
+    <MESSAGE value="database connection check" />
+    <option name="LAST_COMMIT_MESSAGE" value="database connection check" />
   </component>
 </project>
