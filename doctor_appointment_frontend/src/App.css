@@ -37,3 +37,12 @@
     transform: rotate(360deg);
   }
 }
+
+.title{
+  font-size: 24px;
+  font-weight: 1000px;
+}
+
+.whiteInp::placeholder{
+  color: white;
+}
