@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/home.css';
 import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
 import doc5 from './doc5.jpg';
+import { fetchDoctors } from '../Redux/feature/doctorSlice';
 
 function Reservation() {
   const cities = ['Ville A', 'Ville B', 'Ville C'];
@@ -16,6 +19,13 @@ function Reservation() {
     doctor: '',
     date: '',
     selectedTime: '',
+  });
+
+  // eslint-disable-next-line no-unused-vars
+  const doctorsData = useSelector((state) => state.doctor.doctors);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchDoctors());
   });
 
   const handleCityChange = (event) => {
@@ -38,17 +48,21 @@ function Reservation() {
     setData({ ...data, selectedTime: event.target.value });
   };
   const reserve = (data) => {
-    fetch('http://localhost:3000/reservation', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
+    axios
+      .post('http://localhost:3000/reservation', data, {
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then((response) => {
         // eslint-disable-next-line no-console
-        console.log('Success:', data);
+        console.log('Success:', response.data);
         // eslint-disable-next-line no-alert
         alert('Appointment booked successfully');
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error('Error:', error);
+        // eslint-disable-next-line no-alert
+        alert('An error occurred while booking the appointment');
       });
   };
   const handleSubmit = (event) => {
@@ -56,11 +70,20 @@ function Reservation() {
     reserve(data);
   };
   return (
-    <div className="h-screen reservation-container" style={{ backgroundImage: `url(${doc5})`, backgroundSize: 'cover' }}>
+    <div
+      className="h-screen reservation-container"
+      style={{ backgroundImage: `url(${doc5})`, backgroundSize: 'cover' }}
+    >
       <div className="relative flex h-screen w-full flex-col items-center justify-center text-white reservation">
-        <h1 className="mb-6 text-3xl font-bold tracking-2xl space-x-1">MAKE AN APPOINTMENT WITH A DOCTOR </h1>
+        <h1 className="mb-6 text-3xl font-bold tracking-2xl space-x-1">
+          MAKE AN APPOINTMENT WITH A DOCTOR
+          {' '}
+        </h1>
         <hr className="w-1/2 text-white" />
-        <form onSubmit={handleSubmit} className="mx-auto mt-3 w-full max-w-sm grid-cols-2 sm:grid">
+        <form
+          onSubmit={handleSubmit}
+          className="mx-auto mt-3 w-full max-w-sm grid-cols-2 sm:grid"
+        >
           <div className="relative mb-4 flex items-center justify-center">
             <select
               id="city"
@@ -71,7 +94,9 @@ function Reservation() {
               onChange={handleCityChange}
               className="w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             >
-              <option value="" className="bg-[#97bf0f]">Select a city</option>
+              <option value="" className="bg-[#97bf0f]">
+                Select a city
+              </option>
               {cities.map((city) => (
                 <option key={city} className="text-black" value={city}>
                   {city}
@@ -105,7 +130,9 @@ function Reservation() {
                 onChange={handleDoctorChange}
                 className="w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
               >
-                <option value="" className="text-black">Select a doctor</option>
+                <option value="" className="text-black">
+                  Select a doctor
+                </option>
                 {doctors.map((doctor) => (
                   <option key={doctor} className="text-black" value={doctor}>
                     {doctor}
@@ -169,9 +196,7 @@ function Reservation() {
               fill="white"
               viewBox="0 0 10 16"
             >
-              <path
-                d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z"
-              />
+              <path d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z" />
             </svg>
           </button>
         </Link>
