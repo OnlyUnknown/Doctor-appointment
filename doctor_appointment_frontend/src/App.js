@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Add from './components/add';
+import DoctorForm from './components/add';
 import Delete from './components/delete';
 import MyAppointment from './components/myappointment';
 import SideNav from './components/sidenav';
@@ -15,7 +15,7 @@ function App() {
         <SideNav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="add_doctor" element={<Add />} />
+          <Route path="add_doctor" element={<DoctorForm />} />
           <Route path="delete" element={<Delete />} />
           <Route path="my_appointment" element={<MyAppointment />} />
           <Route path="/detail/:id" element={<Detail />} />
