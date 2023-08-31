@@ -51,35 +51,6 @@
   .sidenav a { font-size: 18px; }
 }
 
-.toggle-button {
-  position: fixed;
-  left: 65px;
-  bottom: 113px;
-  height: 74px;
-  width: 80px;
-  transition: 1s;
-  transform: rotateY(180deg);
-}
-
-.toggle-button2 {
-  position: fixed;
-  left: -200px;
-  bottom: 100px;
-  height: 100px;
-  width: 328px;
-  transition: 1s;
-}
-
-.toggle-button3 {
-  position: fixed;
-  left: 85px;
-  bottom: 135px;
-  height: 30px;
-  width: 30px;
-  transition: 1s;
-  transform: rotateY(180deg);
-}
-
 .active-link {
   background: #97bf0f;
   color: white;
@@ -91,4 +62,24 @@
 
 #mySidenav {
   width: 250px;
+}
+
+.toggle-button {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  #mySidenav {
+    width: 0%;
+  }
+
+  .toggle-button {
+    display: block;
+    position: fixed;
+    margin: auto;
+    left: 10px;
+    z-index: 1000;
+    width: 50px;
+    transition: 0.5s;
+  }
 }
