@@ -1,2 +1,0 @@
-class AppointementsController < ApplicationController
-end
