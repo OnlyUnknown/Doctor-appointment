@@ -38,11 +38,6 @@
   }
 }
 
-.title{
-  font-size: 24px;
-  font-weight: 1000px;
-}
-
-.whiteInp::placeholder{
+.whiteInp::placeholder {
   color: white;
 }

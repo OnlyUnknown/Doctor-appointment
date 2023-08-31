@@ -12,7 +12,7 @@ function MyAppointment() {
   return (
     <section id="main">
 
-      <h1 className='title'>My Appointments</h1>
+      <h1 className="title">My Appointments</h1>
       <div className="tableContainer">
         <table>
           <thead>

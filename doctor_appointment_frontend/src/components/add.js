@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import '../css/home.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import doc5 from './doc5.jpg';
 
 function DoctorForm() {
-  const { id } = useParams();
   const [name, setName] = useState('');
   const [speciality, setSpeciality] = useState('');
   const [description, setDescription] = useState('');
+  const [fees, setFees] = useState('');
   const [experience, setExperience] = useState('');
   const [data, setData] = useState({
     name: '',
     speciality: '',
     description: '',
     consultation_fees: '',
-    years_of_experience: ''
+    years_of_experience: '',
   });
 
   const handleNameChange = (event) => {
@@ -69,6 +69,7 @@ function DoctorForm() {
             <input
               id="name"
               name="name"
+              value={name}
               required
               placeholder="Name"
               onChange={handleNameChange}
@@ -76,24 +77,25 @@ function DoctorForm() {
             />
           </div>
 
-            <div className="relative mb-4 flex items-center justify-center">
-              <input
-                id="speciality"
-                name="speciality"
-
-                placeholder="Speciality"
-                required
-                onChange={handleSpecialityChange}
-                className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
-              />
-            </div>
+          <div className="relative mb-4 flex items-center justify-center">
+            <input
+              id="speciality"
+              name="speciality"
+              value={speciality}
+              placeholder="Speciality"
+              required
+              onChange={handleSpecialityChange}
+              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+            />
+          </div>
           <div className="mb-4 flex items-center justify-center">
             <input
               type="number"
               id="experience"
               name="experience"
+              value={experience}
               required
-              placeholder='Experience'
+              placeholder="Experience"
               onChange={handleExperienceChange}
               className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
@@ -103,16 +105,18 @@ function DoctorForm() {
               type="number"
               id="Fees"
               name="Fees"
-              placeholder='Fees'
+              value={fees}
+              placeholder="Fees"
               onChange={handleFeesChange}
               className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
           <div className="mb-4 flex items-center justify-center">
             <textarea
-              id="disciption"
-              name="disciption"
-              placeholder='Discription'
+              id="desciption"
+              name="desciption"
+              value={description}
+              placeholder="Description"
               onChange={handleDescriptionChange}
               className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
