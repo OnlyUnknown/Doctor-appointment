@@ -1,12 +1,12 @@
 AllCops:
   NewCops: enable
   Exclude:
-    - "doctor_appointment_backend/db/**/*"
-    - "doctor_appointment_backend/bin/*" 
-    - "doctor_appointment_backend/config/**/*"
-    - "doctor_appointment_backend/Guardfile"
-    - "doctor_appointment_backend/Rakefile"
-    - "doctor_appointment_backend/node_modules/**/*"
+    - "db/**/*"
+    - "bin/*" 
+    - "config/**/*"
+    - "Guardfile"
+    - "Rakefile"
+    - "node_modules/**/*"
     - "doctor_appointment_frontend/*"
     - "node_modules/**/*"
 
