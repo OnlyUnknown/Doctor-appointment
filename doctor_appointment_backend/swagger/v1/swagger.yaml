@@ -4,6 +4,139 @@ info:
   title: API V1
   version: v1
 paths:
+  api/v1/doctors:
+    post:
+      summary: Create doctors
+      tags:
+      - Doctors
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                speciality:
+                  type: string
+                description:
+                  type: text
+                consultation_fees:
+                  type: float
+                years_of_experience:
+                  type: integer
+              required:
+              - name
+              - speciality
+              - description
+              - consultation_fees
+              - years_of_experience
+          application/xml:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                speciality:
+                  type: string
+                description:
+                  type: text
+                consultation_fees:
+                  type: float
+                years_of_experience:
+                  type: integer
+              required:
+              - name
+              - speciality
+              - description
+              - consultation_fees
+              - years_of_experience
+    get:
+      summary: Retrieves all doctors
+      tags:
+      - Doctors
+      parameters: []
+      responses:
+        '200':
+          description: user found
+  api/v1/doctors/{id}:
+    delete:
+      summary: Delete a doctor
+      tags:
+      - Doctors
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: User deleted
+    get:
+      summary: Retrieves a doctor
+      tags:
+      - Doctors
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: doctor found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  speciality:
+                    type: string
+                  description:
+                    type: text
+                  consultation_fees:
+                    type: float
+                  years_of_experience:
+                    type: integer
+                required:
+                - name
+                - speciality
+                - description
+                - consultation_fees
+                - years_of_experience
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  speciality:
+                    type: string
+                  description:
+                    type: text
+                  consultation_fees:
+                    type: float
+                  years_of_experience:
+                    type: integer
+                required:
+                - name
+                - speciality
+                - description
+                - consultation_fees
+                - years_of_experience
+        '404':
+          description: not found
+        '406':
+          description: unsupported accept header
   api/v1/users:
     post:
       summary: Create User
