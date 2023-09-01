@@ -1,0 +1,121 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  api/v1/users:
+    post:
+      summary: Create User
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - name
+              - email
+              - password
+          application/xml:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - name
+              - email
+              - password
+  api/v1/users/{id}:
+    delete:
+      summary: Delete a user
+      tags:
+      - Users
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: User deleted
+    get:
+      summary: Retrieves all users
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: user found
+  api/v1/show/{id}:
+    get:
+      summary: Retrieves a user
+      tags:
+      - Users
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: user found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  password:
+                    type: string
+                required:
+                - id
+                - name
+                - password
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  password:
+                    type: string
+                required:
+                - id
+                - name
+                - password
+        '404':
+          description: not found
+        '406':
+          description: unsupported accept header
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
