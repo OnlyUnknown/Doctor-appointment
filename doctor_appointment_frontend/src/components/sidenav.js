@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 function SideNav() {
   const openNav = () => {
-    if (document.getElementById('mySidenav').style.width === '100%') {
+    if (document.getElementById('mySidenav').style.width === '100%' && window.innerWidth < 700) {
       document.getElementById('mySidenav').style.width = '0%';
       document.getElementsByClassName('toggle-button')[0].style.transform = 'rotate(0deg)';
-    } else {
+    } else if( window.innerWidth < 700) {
       document.getElementById('mySidenav').style.width = '100%';
       document.getElementsByClassName('toggle-button')[0].style.transform = 'rotate(180deg)';
     }
