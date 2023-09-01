@@ -2,31 +2,28 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../css/home.css';
 import ListDoctors from './listdoctors';
-import list from './doctors';
 import { fetchDoctors } from '../Redux/feature/doctorSlice';
 
 export default function Home() {
   const [index, setIndex] = useState(0);
 
-  // eslint-disable-next-line no-unused-vars
   const doctors = useSelector((state) => state.doctor.doctors);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchDoctors());
   });
-  const [showList, setShowList] = useState(list.doctors.slice(0, 3));
-  // when data from database is fetched, we can use this
-  // const [showList, setShowList] = useState(doctors.slice(0, 3));
+
+  const [showList, setShowList] = useState(doctors.slice(0, 3));
 
   const onRightClick = () => {
-    if (index < list.doctors.length - 3) {
-      setShowList(list.doctors.slice(index + 1, index + 4));
+    if (index < doctors.length - 3) {
+      setShowList(doctors.slice(index + 1, index + 4));
       setIndex(index + 1);
     }
   };
   const onLeftClick = () => {
     if (index > 0) {
-      setShowList(list.doctors.slice(index - 1, index + 2));
+      setShowList(doctors.slice(index - 1, index + 2));
       setIndex(index - 1);
     }
   };
@@ -61,10 +58,10 @@ export default function Home() {
             </svg>
           </button>
           <div className="wide">
-            <ListDoctors list={showList} />
+            <ListDoctors doctors={showList} />
           </div>
           <div className="small">
-            <ListDoctors list={list.doctors} />
+            <ListDoctors doctors={doctors} />
           </div>
           <button
             type="button"

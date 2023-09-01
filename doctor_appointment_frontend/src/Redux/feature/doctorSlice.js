@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const fetchDoctors = createAsyncThunk('doctor/fetchDoctors', () => axios
-  .get('http://localhost:3001/doctors')
+  .get('http://localhost:3000/api/v1/doctors')
   .then((response) => response.data.map((doctor) => doctor)));
 
 const doctorSlice = createSlice({

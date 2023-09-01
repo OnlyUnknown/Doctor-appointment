@@ -70,7 +70,6 @@ function DoctorForm() {
             },
           },
         );
-
         console.log('Success:', response.data);
         alert('Doctor added successfully');
       } catch (error) {

@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06b8e0a8-86fc-452b-a5e3-332879d07c0d" name="Changes" comment="database connection check">
+    <list default="true" id="06b8e0a8-86fc-452b-a5e3-332879d07c0d" name="Changes" comment="database connection succefully">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/config/initializers/cors.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/config/initializers/cors.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/appointmentSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/appointmentSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/doctorSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/doctorSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/listdoctors.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/listdoctors.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693508470659</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="database connection succefully">
+      <option name="closed" value="true" />
+      <created>1693509045960</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693509045960</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,6 +317,7 @@
     <MESSAGE value="replace my-reservation component" />
     <MESSAGE value="style nav &amp; home page" />
     <MESSAGE value="database connection check" />
-    <option name="LAST_COMMIT_MESSAGE" value="database connection check" />
+    <MESSAGE value="database connection succefully" />
+    <option name="LAST_COMMIT_MESSAGE" value="database connection succefully" />
   </component>
 </project>

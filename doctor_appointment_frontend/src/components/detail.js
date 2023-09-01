@@ -1,14 +1,35 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import list from './doctors';
+import axios from 'axios';
+// import list from './doctors';
 
-export default function Detail() {
+export default async function Detail() {
   const { id } = useParams();
-  const doctor = list.doctors.find((doctor) => doctor.id.toString() === id);
+  // const doctor = list.doctors.find((doctor) => doctor.id.toString() === id);
+  const doctor = [];
+  try {
+    const response = await axios.get(
+      `http://localhost:3000/api/v1/doctors/${id}`,
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Access-Control-Allow-Origin': 'http://localhost:3000',
+        },
+      },
+    );
+    console.log(response.data);
+    doctor.push(response.data);
+  } catch (error) {
+    /* empty */
+  }
   return (
     <div className="relative h-screen justify-around pr-[12px] sm:pt-[50px] sm:flex sm:pr-0">
       <div className="sm-[300px]h-full">
-        <img className="h-[332px] details-img" src={doctor.image} alt={doctor.name} />
+        <img
+          className="h-[332px] details-img"
+          src={doctor.image}
+          alt={doctor.name}
+        />
         <Link to="/">
           <button
             type="button"
@@ -26,9 +47,7 @@ export default function Detail() {
               fill="white"
               viewBox="0 0 10 16"
             >
-              <path
-                d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z"
-              />
+              <path d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z" />
             </svg>
           </button>
         </Link>

@@ -14,7 +14,8 @@ class Api::V1::DoctorsController < ApplicationController
     @doctor = Doctor.new(doctor_params)
 
     if @doctor.save
-      render json: @doctor, status: :created, serializer: DoctorSerializer
+      render json: @doctor, status: :created,
+             serializer: DoctorSerializer
     else
       render json: @doctor.errors, status: :unprocessable_entity
     end
@@ -23,6 +24,6 @@ class Api::V1::DoctorsController < ApplicationController
   private
 
   def doctor_params
-    params.permit(:name, :speciality, :description, :consultation_fees, :years_of_experience, :image)
+    params.require(:doctor).permit(:name, :speciality, :description, :consultation_fees, :years_of_experience, :image)
   end
 end
