@@ -7,7 +7,8 @@ import SideNav from './components/sidenav';
 import Home from './components/home';
 import Detail from './components/detail';
 import Reservation from './components/reservation';
-import { Register } from './components/Register';
+import  Register  from './components/Register';
+import  SignIn  from './components/SignIn';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/reservation/:id" element={<Reservation />} />
           <Route path="/reservation" element={<Reservation />} />
           <Route path='/Register' element={<Register />} />
+          <Route path='/sign_in' element={<SignIn />} />
         </Routes>
       </BrowserRouter>
     </div>

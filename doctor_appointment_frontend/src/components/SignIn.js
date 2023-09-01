@@ -3,23 +3,14 @@ import '../css/home.css';
 import { Link,useNavigate } from 'react-router-dom';
 import doc5 from './doc5.jpg';
 
-const Register = () => {
+const SignIn = () => {
     const navigate = useNavigate();
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [password_confirmation, setPasswordConfirmation] = useState('');
   const [data, setData] = useState({
-    name: '',
     email: '',
     password: '',
-    password_confirmation: '',
   });
-
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-    setData({ ...data, name: event.target.value });
-  };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -30,12 +21,8 @@ const Register = () => {
     setPassword(event.target.value);
     setData({ ...data, password: event.target.value });
   };
-  const handlePasswordConfirmationChange = (event) => {
-    setPasswordConfirmation(event.target.value);
-    setData({ ...data, password_confirmation: event.target.value });
-  };
   const reserve = (data) => {
-    fetch('http://localhost:3000/api/v1/users/create', {
+    fetch('http://localhost:3000/api/v1/users/index', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -56,21 +43,9 @@ const Register = () => {
   return (
     <div className="register h-screen reservation-container" style={{ backgroundImage: `url(${doc5})`, backgroundSize: 'cover' }}>
       <div className="relative flex h-screen w-full flex-col items-center justify-center text-white reservation">
-        <h1 className="mb-6 text-3xl font-bold tracking-2xl space-x-1">Sign UP</h1>
+        <h1 className="mb-6 text-3xl font-bold tracking-2xl space-x-1">Sign IN</h1>
         <hr className="w-1/2 text-white" />
         <form onSubmit={handleSubmit} className="mx-auto mt-3 w-full max-w-sm grid-cols-2 sm:grid">
-          <div className="relative mb-4 flex items-center justify-center">
-            <input
-              id="name"
-              name="name"
-              value={name}
-              required
-              placeholder="Name"
-              onChange={handleNameChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
-            />
-          </div>
-
           <div className="relative mb-4 flex items-center justify-center">
             <input
               id="email"
@@ -93,22 +68,11 @@ const Register = () => {
               className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
-          <div className="mb-4 flex items-center justify-center">
-            <input
-                type='password'
-              id="passwordC"
-              name="passwordC"
-              value={password_confirmation}
-              placeholder="pass Confirmation"
-              onChange={handlePasswordConfirmationChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
-            />
-          </div>
           <button
             type="submit"
             className="bg-white  text-[#97bf0f] font-bold sm: p-2 rounded-full mt-3 focus:outline-none focus:shadow-outline"
           >
-            Sign UP now
+            Sign IN now
           </button>
         </form>
         <Link to="/">
@@ -124,4 +88,4 @@ const Register = () => {
   );
 }
 
-export default Register
+export default SignIn
