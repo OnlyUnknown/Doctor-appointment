@@ -15,6 +15,7 @@ function SideNav() {
     <section>
       <button
         type="button"
+        className='hidden'
         onClick={openNav}
       >
         <img alt="togglebutton1" src={`${process.env.PUBLIC_URL}/menu.png`} className="toggle-button" />
