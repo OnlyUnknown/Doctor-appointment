@@ -7,6 +7,7 @@ import SideNav from './components/sidenav';
 import Home from './components/home';
 import Detail from './components/detail';
 import Reservation from './components/reservation';
+import { Register } from './components/Register';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/reservation/:id" element={<Reservation />} />
           <Route path="/reservation" element={<Reservation />} />
+          <Route path='/Register' element={<Register />} />
         </Routes>
       </BrowserRouter>
     </div>
