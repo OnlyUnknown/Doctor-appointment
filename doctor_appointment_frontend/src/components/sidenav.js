@@ -6,7 +6,7 @@ function SideNav() {
     if (document.getElementById('mySidenav').style.width === '100%' && window.innerWidth < 700) {
       document.getElementById('mySidenav').style.width = '0%';
       document.getElementsByClassName('toggle-button')[0].style.transform = 'rotate(0deg)';
-    } else if( window.innerWidth < 700) {
+    } else if (window.innerWidth < 700) {
       document.getElementById('mySidenav').style.width = '100%';
       document.getElementsByClassName('toggle-button')[0].style.transform = 'rotate(180deg)';
     }
@@ -15,13 +15,13 @@ function SideNav() {
     <section>
       <button
         type="button"
-        className='hidden'
+        className="hidden"
         onClick={openNav}
       >
         <img alt="togglebutton1" src={`${process.env.PUBLIC_URL}/menu.png`} className="toggle-button" />
       </button>
       <div id="mySidenav" className="sidenav fixed">
-      <NavLink onClick={openNav} className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/registration_page">Registration</NavLink>
+        <NavLink onClick={openNav} className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/registration_page">Registration</NavLink>
         <NavLink onClick={openNav} to="/" className={({ isActive }) => (isActive ? 'active-link' : 'none')}>Doctors</NavLink>
         <NavLink onClick={openNav} className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/my_appointment">My Appointment</NavLink>
         <NavLink onClick={openNav} className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/reservation">Appoint</NavLink>

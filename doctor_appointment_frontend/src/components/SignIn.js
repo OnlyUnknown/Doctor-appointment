@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import '../css/home.css';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import doc5 from './doc5.jpg';
 
-const SignIn = () => {
-    const navigate = useNavigate();
+function SignIn() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [data, setData] = useState({
@@ -33,7 +33,7 @@ const SignIn = () => {
         console.log('Success:', data);
         // eslint-disable-next-line no-alert
         alert('Appointment booked successfully');
-        navigate('/')
+        navigate('/');
       });
   };
   const handleSubmit = (event) => {
@@ -59,7 +59,7 @@ const SignIn = () => {
           </div>
           <div className="mb-4 flex items-center justify-center">
             <input
-                type='password'
+              type="password"
               id="password"
               name="password"
               value={password}
@@ -79,13 +79,12 @@ const SignIn = () => {
           <button
             type="button"
             className="absolute bottom-4 left-0 w-16 h-10 flex invisible sm:visible  justify-center items-center rounded-tr-full rounded-br-full border border-amber-50 focus:bg-[#97bf0f] shadow-md"
-          >
-
-          </button>
+            aria-label="B"
+          />
         </Link>
       </div>
     </div>
   );
 }
 
-export default SignIn
+export default SignIn;

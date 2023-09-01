@@ -68,7 +68,7 @@
   display: none;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
@@ -76,12 +76,14 @@
   #mySidenav {
     width: 0%;
   }
-  .hidden{
+
+  .hidden {
     display: block;
     position: fixed;
     z-index: 10;
     top: 10px;
   }
+
   .toggle-button {
     display: block;
     position: fixed;
