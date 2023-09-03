@@ -4,40 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06b8e0a8-86fc-452b-a5e3-332879d07c0d" name="Changes" comment="replace my-reservation component">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/app/controllers/appointements_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/app/controllers/doctor_show_serialiser.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/app/controllers/doctors_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/app/controllers/users_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/app/doc1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/app/models/appointement.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/app/models/doctor.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/app/models/user.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/app/serializers/doctor_show_serializer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/db/migrate/20230830234642_create_doctors.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/db/migrate/20230830235651_create_users.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/db/migrate/20230831053015_create_appointements.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/db/migrate/20230831055523_create_active_storage_tables.active_storage.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/db/schema.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/storage/gq/sj/gqsjos2rijqrkqpdifqzl683a1kj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/storage/qp/35/qp35oc5eofzcv8360yhfbdv3dmsu" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/test/controllers/appointements_controller_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/test/controllers/doctors_controller_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/test/controllers/users_controller_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/test/fixtures/appointements.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/test/fixtures/doctors.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/test/fixtures/users.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/test/models/appointement_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/test/models/doctor_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/test/models/user_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/tmp/pids/server.pid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor_appointement_backend/tmp/restart.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Doctor-appointment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Doctor-appointment.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/doctor_appointment_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/doctor_appointment_backend.iml" afterDir="false" />
+    <list default="true" id="06b8e0a8-86fc-452b-a5e3-332879d07c0d" name="Changes" comment="database connection succefully">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/appointmentSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/appointmentSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/doctorSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/doctorSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/listdoctors.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/listdoctors.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,16 +51,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="data" />
+                    <option name="lastUsedInstant" value="1693494716" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="backend_rebase" />
                     <option name="lastUsedInstant" value="1693438018" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="front-setup" />
                     <option name="lastUsedInstant" value="1693088614" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="project-setup" />
-                    <option name="lastUsedInstant" value="1693088576" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
@@ -131,7 +106,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "backend__rebase",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "data",
     "javascript.nodejs.core.library.configured.version": "19.7.0",
     "javascript.nodejs.core.library.typings.version": "20.5.6",
     "last_opened_file_path": "C:/Users/Touré/RubymineProjects/Doctor-appointment/doctor_appointement_backend/app",
@@ -158,6 +134,14 @@
     ]
   }
 }]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Touré\RubymineProjects\Doctor-appointment\doctor_appointement_backend\app" />
@@ -166,11 +150,11 @@
       <recent name="C:\Users\Touré\RubymineProjects\Doctor-appointment\doctor_appointment_frontend\public\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tour.drissa\RubymineProjects\Doctor-appointment\doctor_appointment_backend\app\controllers\api\v1" />
       <recent name="C:\Users\Touré\RubymineProjects\Doctor-appointment\doctor_appointement_backend\app\serializers" />
       <recent name="C:\Users\Touré\RubymineProjects\Doctor-appointment\doctor_appointement_backend\app\models" />
       <recent name="C:\Users\Touré\RubymineProjects\Doctor-appointment\doctor_appointment_frontend\src\components" />
       <recent name="C:\Users\Touré\RubymineProjects\Doctor-appointment\doctor_appointment_frontend\public\assets" />
-      <recent name="C:\Users\Touré\RubymineProjects\Doctor-appointment\doctor_appointment_frontend" />
     </key>
   </component>
   <component name="RunManager" selected="Rails.doctor_appointment_backend">
@@ -298,7 +282,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693354635126</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="database connection check">
+      <option name="closed" value="true" />
+      <created>1693508470659</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693508470659</updated>
+    </task>
+    <task id="LOCAL-00008" summary="database connection succefully">
+      <option name="closed" value="true" />
+      <created>1693509045960</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693509045960</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +316,8 @@
     <MESSAGE value="combine files" />
     <MESSAGE value="replace my-reservation component" />
     <MESSAGE value="style nav &amp; home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="style nav &amp; home page" />
+    <MESSAGE value="database connection check" />
+    <MESSAGE value="database connection succefully" />
+    <option name="LAST_COMMIT_MESSAGE" value="database connection succefully" />
   </component>
 </project>

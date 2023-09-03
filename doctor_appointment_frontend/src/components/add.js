@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import '../css/home.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import doc5 from './doc5.jpg';
 
 function DoctorForm() {
+  const [selectedFile, setSelectedFile] = useState(null);
   const [name, setName] = useState('');
   const [speciality, setSpeciality] = useState('');
   const [description, setDescription] = useState('');
@@ -16,6 +18,11 @@ function DoctorForm() {
     consultation_fees: '',
     years_of_experience: '',
   });
+
+  const fileSelectedHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+    setData({ ...data, image: selectedFile });
+  };
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -41,30 +48,52 @@ function DoctorForm() {
     setFees(event.target.value);
     setData({ ...data, consultation_fees: event.target.value });
   };
-  const reserve = (data) => {
-    fetch('http://localhost:3000/reservation', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // eslint-disable-next-line no-console
-        console.log('Success:', data);
-        // eslint-disable-next-line no-alert
-        alert('Appointment booked successfully');
-      });
-  };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    reserve(data);
+    if (selectedFile instanceof File) {
+      const formData = new FormData();
+      formData.append('doctor[name]', name);
+      formData.append('doctor[speciality]', speciality);
+      formData.append('doctor[description]', description);
+      formData.append('doctor[consultation_fees]', fees);
+      formData.append('doctor[years_of_experience]', experience);
+      formData.append('doctor[image]', selectedFile, selectedFile.name);
+
+      try {
+        const response = await axios.post(
+          'http://localhost:3000/api/v1/doctors',
+          formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+              'Access-Control-Allow-Origin': 'http://localhost:3000',
+            },
+          },
+        );
+        console.log('Success:', response.data);
+        alert('Doctor added successfully');
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to add doctor');
+      }
+    }
   };
+
   return (
-    <div className="h-screen reservation-container" style={{ backgroundImage: `url(${doc5})`, backgroundSize: 'cover' }}>
+    <div
+      className="h-screen reservation-container"
+      style={{ backgroundImage: `url(${doc5})`, backgroundSize: 'cover' }}
+    >
       <div className="relative flex h-screen w-full flex-col items-center justify-center text-white reservation">
-        <h1 className="mb-6 text-3xl font-bold tracking-2xl space-x-1">ADD A DOCTOR </h1>
+        <h1 className="mb-6 text-3xl font-bold tracking-2xl space-x-1">
+          ADD A DOCTOR
+          {' '}
+        </h1>
         <hr className="w-1/2 text-white" />
-        <form onSubmit={handleSubmit} className="mx-auto mt-3 w-full max-w-sm grid-cols-2 sm:grid">
+        <form
+          onSubmit={handleSubmit}
+          className="mx-auto mt-3 w-full max-w-sm grid-cols-2 sm:grid"
+        >
           <div className="relative mb-4 flex items-center justify-center">
             <input
               id="name"
@@ -121,6 +150,17 @@ function DoctorForm() {
               className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
+          <div className="mb-4 flex items-center justify-center">
+            <input
+              type="file"
+              accept="image/*"
+              id="image"
+              name="image"
+              placeholder="File choose"
+              onChange={fileSelectedHandler}
+              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+            />
+          </div>
           <button
             type="submit"
             className="bg-white  text-[#97bf0f] font-bold sm: p-2 rounded-full mt-3 focus:outline-none focus:shadow-outline"
@@ -140,9 +180,7 @@ function DoctorForm() {
               fill="white"
               viewBox="0 0 10 16"
             >
-              <path
-                d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z"
-              />
+              <path d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z" />
             </svg>
           </button>
         </Link>

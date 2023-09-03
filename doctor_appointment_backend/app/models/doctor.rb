@@ -1,17 +1,24 @@
 class Doctor < ApplicationRecord
-  before_validation :set_default
+  # before_validation :set_default
 
-  validates :name, presence: true
-  validates :speciality, presence: true
-  validates :description, presence: true
-  validates :consultation_fees, presence: true
-  validates :years_of_experience, presence: true
+  validates :name, :speciality, :description, :consultation_fees, :years_of_experience, presence: true
   has_one_attached :image
   has_many :doctors_users
+  after_commit :add_default_image, on: %i[create]
 
   private
 
-  def set_default
-    '../assets/images/doctor-placeholder-1.png' if image.blank?
+  def add_default_image
+    return if image.attached?
+
+    image.attach(
+      io: File.open(
+        Rails.root.join(
+          'app', 'assets', 'images', 'default_image.png'
+        )
+      ),
+      filename: 'default_image.png',
+      content_type: 'image/png'
+    )
   end
 end

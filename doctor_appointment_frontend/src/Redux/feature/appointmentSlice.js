@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
@@ -7,9 +7,12 @@ const initialState = {
   error: '',
 };
 
-const fetchAppointments = createAsyncThunk('appoitnment/fetchAppointments', () => axios
-  .get('https://jsonplaceholder.typicode.com/users')
-  .then((response) => response.data.map((user) => user)));
+const fetchAppointments = createAsyncThunk(
+  'appoitnment/fetchAppointments',
+  () => axios
+    .get('https://localhost:3000/api/v1/doctors_users')
+    .then((response) => response.data.map((user) => user)),
+);
 
 const appointmentSlice = createSlice({
   name: 'appoitment',

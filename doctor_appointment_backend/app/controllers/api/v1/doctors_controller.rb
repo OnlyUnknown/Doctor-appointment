@@ -1,4 +1,4 @@
-class DoctorsController < ApplicationController
+class Api::V1::DoctorsController < ApplicationController
   def index
     @doctors = Doctor.all
     response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001'
@@ -10,12 +10,14 @@ class DoctorsController < ApplicationController
   end
 
   def create
-    @doctor = Doctor.new(user_params)
+    request.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001/api/v1/doctors'
+    @doctor = Doctor.new(doctor_params)
 
-    if @Doctor.save
-      render json: @Doctor, status: :created
+    if @doctor.save
+      render json: @doctor, status: :created,
+             serializer: DoctorSerializer
     else
-      render json: @Doctor.errors, status: :unprocessable_entity
+      render json: @doctor.errors, status: :unprocessable_entity
     end
   end
 
