@@ -18,14 +18,8 @@ function Reservation() {
       .delete('http://localhost:3000/id', {
         headers: { 'Content-Type': 'application/json' },
       })
-      .then((response) => {
-        console.log('Success:', response.data);
-        alert('Appointment deleted successfully');
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        alert('An error occurred while deleting the appointment');
-      });
+      .then((response) => <div>{response}</div>)
+      .catch((error) => <div>{error}</div>);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
