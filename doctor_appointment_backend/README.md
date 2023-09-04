@@ -107,7 +107,13 @@ npm start
 👤 **Abdullah AL-Khureif**
 
 - GitHub: [@githubhandle](https://github.com/OnlyUnknown)
-- Twitter: [@twitterhandle](https://twitter.com/touredri)
+
+👤 **Basim Aljazaeri**
+
+- GitHub: [@githubhandle](https://github.com/ShiroYaksha90)
+- Twitter: [@twitterhandle](https://twitter.com/Basim_AlJazaeri)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/basimaljazaeri/)
+
 
 
 
