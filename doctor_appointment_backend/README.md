@@ -151,8 +151,7 @@ If you like this project please give it a 5⭐!
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-We would like to thank [Microverse](https://bit.ly/MicroverseTN) for the opportunity to work on this project.
+We would like to give credit to [ Murat Korkmaz on Behance](https://www.behance.net/muratk) for the design of this app and  [Microverse](https://bit.ly/MicroverseTN) for the opportunity to work on this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
