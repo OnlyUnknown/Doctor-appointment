@@ -104,9 +104,10 @@ npm start
 - Twitter: [@twitterhandle](https://twitter.com/touredri)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/touredri/)
 
-👤 **Patrick Mukula**
+👤 **Abdullah AL-Khureif**
 
-- GitHub: [@githubhandle](https://github.com/Patfarmurs)
+- GitHub: [@githubhandle](https://github.com/OnlyUnknown)
+- Twitter: [@twitterhandle](https://twitter.com/touredri)
 
 
 
