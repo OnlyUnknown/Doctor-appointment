@@ -98,11 +98,11 @@ npm start
 - Twitter: [@twitterhandle](https://twitter.com/isabella_otoo)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/isabella-otoo)
 
-👤 **Massa Zoumanigui**
+👤 **Drissa Toure**
 
-- GitHub: [@githubhandle](https://github.com/massazoum)
-- Twitter: [@twitterhandle](https://twitter.com/zoumaniguimass1)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/zoumtechmassa)
+- GitHub: [@githubhandle](https://github.com/touredri)
+- Twitter: [@twitterhandle](https://twitter.com/touredri)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/touredri/)
 
 👤 **Patrick Mukula**
 
