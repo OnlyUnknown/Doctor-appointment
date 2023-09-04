@@ -27,13 +27,14 @@
 
 # 📖 Doctor Appointment App <a name="about-project"></a>
 
-**Doctor Appointment App** is a React and Rails-built fully functional app. The Doctor appointment app allows users to book an appointment with a doctor. keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
+**Doctor Appointment App** is a React and Rails-built fully functional app. The Doctor appointment app allows users to book an appointment with a doctor. 
 
 ## 🛠️ Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-- Ruby
+- Ruby on Rails
+- React
 
 <!-- Features -->
 
@@ -41,12 +42,10 @@
 
 - [ ] **A login page**
 - [ ] **A registration page**
-- [ ] **A food list**
-- [ ] **A recipes list**
-- [ ] **A general shopping list view**
-- [ ] **A list of all public recipe**
-- [ ] **Inventories list**
-- [ ] **Inventory shopping list, a shopping list**
+- [ ] **A list of users**
+- [ ] **A list of doctors**
+- [ ] **Appointment Booking with doctors**
+- [ ] **API Documentation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
