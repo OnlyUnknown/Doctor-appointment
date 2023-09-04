@@ -7,6 +7,9 @@ import SideNav from './components/sidenav';
 import Home from './components/home';
 import Detail from './components/detail';
 import Reservation from './components/reservation';
+import Register from './components/Register';
+import SignIn from './components/SignIn';
+import RegisterPage from './components/RegistrationPage';
 
 function App() {
   return (
@@ -15,12 +18,15 @@ function App() {
         <SideNav />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/registration_page" element={<RegisterPage />} />
           <Route path="add_doctor" element={<DoctorForm />} />
           <Route path="delete" element={<Delete />} />
           <Route path="my_appointment" element={<MyAppointment />} />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/reservation/:id" element={<Reservation />} />
           <Route path="/reservation" element={<Reservation />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/sign_in" element={<SignIn />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 /* eslint-enable import/no-extraneous-dependencies */
 import '../css/home.css';
 
-export default function ListDoctors({ list }) {
+export default function ListDoctors({ doctors }) {
   return (
     <div className="flex flex-wrap justify-center">
-      {list.map((doctor) => (
+      {doctors.map((doctor) => (
         <Link to={`/Detail/${doctor.id}`} key={doctor.name}>
           <div
             key={doctor.id}
@@ -16,7 +16,11 @@ export default function ListDoctors({ list }) {
             flex-col items-center justify-center
              gap-4 rounded-lg bg-white p-2 shadow-md"
           >
-            <img className="w-32 h-[232px] home-img" src={doctor.image} alt={doctor.name} />
+            <img
+              className="w-32 h-[232px] home-img"
+              src={doctor.image}
+              alt={doctor.name}
+            />
             <div className="flex flex-col">
               <h1 className="text-xl font-bold">{doctor.name}</h1>
               <p className="text-gray-600">{doctor.speciality}</p>
@@ -82,12 +86,14 @@ export default function ListDoctors({ list }) {
 }
 
 ListDoctors.propTypes = {
-  list: PropTypes.arrayOf(
+  doctors: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       speciality: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
+      // eslint-disable-next-line react/forbid-prop-types
+      image: PropTypes.object.isRequired, // Assuming image is a string representing the image URL
+      description: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };

@@ -68,15 +68,25 @@
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 @media only screen and (max-width: 700px) {
   #mySidenav {
     width: 0%;
   }
 
+  .hidden {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    top: 10px;
+  }
+
   .toggle-button {
     display: block;
     position: fixed;
-    margin: auto;
     left: 10px;
     z-index: 1000;
     width: 50px;
