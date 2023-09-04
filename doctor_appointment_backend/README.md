@@ -67,7 +67,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/massazoum/rails_capstone_project
+  git https://github.com/OnlyUnknown/Doctor-appointment
 ```
 
 <!-- ### Install -->
@@ -75,6 +75,7 @@ Clone this repository to your desired folder:
 Install this project with:
 ```
 bundle install
+npm install
 ```
 
 
