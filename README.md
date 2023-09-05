@@ -54,6 +54,8 @@
 
 <a href="https://github.com/users/OnlyUnknown/projects/12">Kanban Board</a>
 
+<a href="https://user-images.githubusercontent.com/116448416/262923531-c43d80cf-c1a8-435b-b64b-55a23b344eb5.png">Kanban Board Screenshot</a>
+
 We are a team of four members.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
