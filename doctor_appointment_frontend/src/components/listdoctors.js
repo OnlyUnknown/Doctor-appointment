@@ -7,18 +7,18 @@ import '../css/home.css';
 
 export default function ListDoctors({ doctors }) {
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap justify-center items-center">
       {doctors.map((doctor) => (
-        <Link to={`/Detail/${doctor.id}`} key={doctor.name}>
+        <Link to={`/Detail/${doctor.id}`} key={doctor.id}>
           <div
             key={doctor.id}
-            className="m-4 flex h-64 w-64
+            className="m-4 flex  w-64
             flex-col items-center justify-center
              gap-4 rounded-lg bg-white p-2 shadow-md"
           >
             <img
-              className="w-32 h-[232px] home-img"
-              src={doctor.image}
+              className="w-32 h-[160px] home-img"
+              src={doctor.image.url}
               alt={doctor.name}
             />
             <div className="flex flex-col">

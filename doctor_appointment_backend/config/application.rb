@@ -23,5 +23,9 @@ module DoctorAppointmentBackend
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.active_storage.resolve_model_to_route = :rails_storage_proxy
+
+    # For local development, you can set the host and protocol as follows:
+    config.active_storage.service_url_host = 'http://localhost'
   end
 end
