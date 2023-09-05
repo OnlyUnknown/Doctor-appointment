@@ -9,12 +9,12 @@ function MyAppointment() {
   const appointment = useSelector((state) => state.appointment);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAppointments());
+    dispatch(fetchAppointments(currentUser.id));
   }, [dispatch]);
   return (
     <section id="main">
 
-      <h1 className="title">My Appointments</h1>
+      <h1 className="text-3xl font-bold">My Appointments</h1>
       <div className="tableContainer">
         <table>
           <thead>
@@ -31,7 +31,7 @@ function MyAppointment() {
               {appointment.error}
             </div>
           ) : null}
-          {!appointment.loading && appointment.appointments.length ? (
+          {!appointment.loading && appointment.appointments.length && currentUser ? (
             <tbody>
               {appointment.appointments.map((app) => (
 
@@ -44,7 +44,9 @@ function MyAppointment() {
               ))}
             </tbody>
 
-          ) : null}
+          ) : (
+            <div>There is no appointments yet or you haven't logged in yet</div>
+          )}
 
         </table>
       </div>

@@ -1,14 +1,15 @@
 class Api::V1::DoctorsUsersController < ApplicationController
   def index
-    doctor_users = DoctorsUser.includes(:user, :doctor).all
+    doctors_users = DoctorsUser.all
+    render json: doctors_users
+  end
+
+  def show
+    user_id_to_include = params[:id]
+    doctor_users = DoctorsUser.includes(:user, :doctor).where(user_id: user_id_to_include)
     render json: doctor_users, include: { 
       doctor: { only: :name },
     }, methods: [:city, :appontment_date]  end
-
-  def show
-    doctors_user = DoctorsUser.find(params[:id])
-    render json: doctors_user
-  end
 
   def create
     doctors_user = DoctorsUser.new(doctors_user_params)
