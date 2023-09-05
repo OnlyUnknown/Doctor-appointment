@@ -9,7 +9,7 @@ export default function ListDoctors({ doctors }) {
   return (
     <div className="flex flex-wrap justify-center">
       {doctors.map((doctor) => (
-        <Link to={`/Detail/${doctor.id}`} key={doctor.name}>
+        <Link to={`/Detail/${doctor.id}`} key={doctor.id}>
           <div
             key={doctor.id}
             className="m-4 flex h-64 w-64
@@ -18,7 +18,7 @@ export default function ListDoctors({ doctors }) {
           >
             <img
               className="w-32 h-[232px] home-img"
-              src={doctor.image}
+              src={doctor.image.url}
               alt={doctor.name}
             />
             <div className="flex flex-col">

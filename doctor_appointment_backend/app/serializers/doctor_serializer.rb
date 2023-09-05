@@ -1,5 +1,6 @@
 class DoctorSerializer < ActiveModel::Serializer
   attributes :id, :name, :speciality, :description, :consultation_fees, :years_of_experience, :image
+  include Rails.application.routes.url_helpers
 
   def image
     return unless object.image.attached?

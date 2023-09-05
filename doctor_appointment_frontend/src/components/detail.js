@@ -19,7 +19,7 @@ export default function Detail() {
       <div className="sm-[300px]h-full">
         <img
           className="h-[332px] details-img"
-          src={doctor.image}
+          src={doctor.image?.url}
           alt={doctor.name}
         />
         <Link to="/">
