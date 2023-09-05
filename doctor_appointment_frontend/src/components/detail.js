@@ -18,7 +18,7 @@ export default function Detail() {
     <div className="relative h-screen justify-around pr-[12px] sm:pt-[50px] sm:flex sm:pr-0">
       <div className="sm-[300px]h-full">
         <img
-          className="h-[332px] details-img"
+          className="h-[332px] md:h-[470px] details-img"
           src={doctor.image?.url}
           alt={doctor.name}
         />

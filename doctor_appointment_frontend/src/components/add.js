@@ -60,7 +60,7 @@ function DoctorForm() {
       formData.append('doctor[image]', selectedFile, selectedFile.name);
 
       try {
-        const response = await axios.post(
+        await axios.post(
           'http://localhost:3000/api/v1/doctors',
           formData,
           {
@@ -70,11 +70,8 @@ function DoctorForm() {
             },
           },
         );
-        console.log('Success:', response.data);
-        alert('Doctor added successfully');
       } catch (error) {
-        console.error('Error:', error);
-        alert('Failed to add doctor');
+        /* empty */
       }
     }
   };
@@ -102,11 +99,11 @@ function DoctorForm() {
               required
               placeholder="Name"
               onChange={handleNameChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+              className="whiteInp w-3/4 placeholder:text-white appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
 
-          <div className="relative mb-4 flex items-center justify-center">
+          <div className="relative mb-4 flex text-white items-center justify-center">
             <input
               id="speciality"
               name="speciality"
@@ -114,7 +111,7 @@ function DoctorForm() {
               placeholder="Speciality"
               required
               onChange={handleSpecialityChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+              className="whiteInp w-3/4 placeholder:text-white appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
           <div className="mb-4 flex items-center justify-center">
@@ -126,7 +123,7 @@ function DoctorForm() {
               required
               placeholder="Experience"
               onChange={handleExperienceChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+              className="whiteInp w-3/4 placeholder:text-white appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
           <div className="mb-4 flex items-center justify-center">
@@ -137,7 +134,7 @@ function DoctorForm() {
               value={fees}
               placeholder="Fees"
               onChange={handleFeesChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+              className="whiteInp w-3/4 placeholder:text-white appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
           <div className="mb-4 flex items-center justify-center">
@@ -147,7 +144,7 @@ function DoctorForm() {
               value={description}
               placeholder="Description"
               onChange={handleDescriptionChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+              className="whiteInp w-3/4 placeholder:text-white appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
           <div className="mb-4 flex items-center justify-center">

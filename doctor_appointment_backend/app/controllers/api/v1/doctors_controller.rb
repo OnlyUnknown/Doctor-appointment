@@ -27,6 +27,13 @@ class Api::V1::DoctorsController < ApplicationController
     end
   end
 
+  def destroy
+    @doctor = Doctor.find(params[:id])
+    @doctor.destroy
+    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001'
+    render json: { message: 'Doctor deleted' }
+  end
+
   private
 
   def doctor_params
