@@ -1,27 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchDoctors } from '../Redux/feature/doctorSlice';
 // import list from './doctors';
 
-export default async function Detail() {
+export default function Detail() {
   const { id } = useParams();
-  // const doctor = list.doctors.find((doctor) => doctor.id.toString() === id);
-  const doctor = [];
-  try {
-    const response = await axios.get(
-      `http://localhost:3000/api/v1/doctors/${id}`,
-      {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          'Access-Control-Allow-Origin': 'http://localhost:3000',
-        },
-      },
-    );
-    console.log(response.data);
-    doctor.push(response.data);
-  } catch (error) {
-    /* empty */
-  }
+  const doctors = useSelector((state) => state.doctor.doctors);
+  const [doctor, setDoctor] = React.useState({});
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchDoctors());
+    setDoctor(doctors.find((doctor) => doctor.id.toString() === id));
+    console.log(doctor);
+  }, [dispatch]);
   return (
     <div className="relative h-screen justify-around pr-[12px] sm:pt-[50px] sm:flex sm:pr-0">
       <div className="sm-[300px]h-full">
@@ -47,7 +39,9 @@ export default async function Detail() {
               fill="white"
               viewBox="0 0 10 16"
             >
-              <path d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z" />
+              <path
+                d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z"
+              />
             </svg>
           </button>
         </Link>
@@ -57,14 +51,21 @@ export default async function Detail() {
         <p className="text-end font-bold text-black">{doctor.speciality}</p>
         <div className="flex flex-row items-center justify-center gap-6 bg-gray-200 p-2">
           <p className="text-gray-600">Consultation fees</p>
-          <p className="text-gray-600">$223</p>
+          <p className="text-gray-600">
+            $
+            {doctor.consultation_fees}
+          </p>
         </div>
         <div className="flex flex-row items-center justify-center gap-6 p-2">
           <p className="text-gray-600">Total appointment</p>
           <p className="text-gray-600">12</p>
         </div>
         <div className="flex flex-row items-center justify-center gap-6 bg-gray-200 p-2">
-          <p className="text-gray-600">7 years</p>
+          <p className="text-gray-600">
+            {doctor.years_of_experience}
+            {' '}
+            years
+          </p>
           <p className="text-gray-600">of experience</p>
         </div>
         <Link to={`/Reservation/${doctor.id}`}>

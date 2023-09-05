@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06b8e0a8-86fc-452b-a5e3-332879d07c0d" name="Changes" comment="database connection succefully">
+      <change beforePath="$PROJECT_DIR$/.idea/Doctor-appointment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Doctor-appointment.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/controllers/api/v1/doctors_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/appointmentSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/appointmentSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/doctorSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/Redux/feature/doctorSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/app/serializers/doctor_serializer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/app/serializers/doctor_serializer.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/config/boot.rb" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/config/boot.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_backend/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_backend/config/database.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/Styling/sidenav.css" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/Styling/sidenav.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/add.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/listdoctors.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/listdoctors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/sidenav.js" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/components/sidenav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_appointment_frontend/src/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_appointment_frontend/src/css/home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +59,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="data" />
-                    <option name="lastUsedInstant" value="1693494716" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="backend_rebase" />
-                    <option name="lastUsedInstant" value="1693438018" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="front-setup" />
-                    <option name="lastUsedInstant" value="1693088614" />
+                    <option name="branchName" value="fetch-data" />
+                    <option name="lastUsedInstant" value="1693852132" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
@@ -107,7 +107,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "data",
+    "git-widget-placeholder": "fetch-data",
     "javascript.nodejs.core.library.configured.version": "19.7.0",
     "javascript.nodejs.core.library.typings.version": "20.5.6",
     "last_opened_file_path": "C:/Users/Touré/RubymineProjects/Doctor-appointment/doctor_appointement_backend/app",
@@ -298,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693509045960</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="home page">
+      <option name="closed" value="true" />
+      <created>1693852085829</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693852085830</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +326,7 @@
     <MESSAGE value="style nav &amp; home page" />
     <MESSAGE value="database connection check" />
     <MESSAGE value="database connection succefully" />
-    <option name="LAST_COMMIT_MESSAGE" value="database connection succefully" />
+    <MESSAGE value="home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="home page" />
   </component>
 </project>

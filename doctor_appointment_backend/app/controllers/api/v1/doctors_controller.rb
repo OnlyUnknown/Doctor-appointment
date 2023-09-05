@@ -2,11 +2,17 @@ class Api::V1::DoctorsController < ApplicationController
   def index
     @doctors = Doctor.all
     response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001'
-    render json: @doctors
+    render json: @doctors.with_attached_image
   end
 
   def new
     @doctor = Doctor.new
+  end
+
+  def show
+    @doctor = Doctor.find(params[:id])
+    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001'
+    render json: @doctor
   end
 
   def create

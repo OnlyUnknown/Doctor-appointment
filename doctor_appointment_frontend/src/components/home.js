@@ -29,21 +29,22 @@ export default function Home() {
   };
 
   return (
-    <div className="flex justify-end item-end ml-[250px]">
-      <div className="relative flex h-fit w-full flex-col items-center justify-center">
-        <h1 className="absolute text-3xl font-bold top-[70px]">
+    <div className="sm-[700px]:pt-[100px] pt-10 h-full overflow-y-scroll ">
+      <div className="relative flex w-full flex-col items-center justify-center">
+        <h1 className="text-3xl font-bold">
           LATEST DOCTORS
         </h1>
-        <p className="absolute text-gray-400 top-[100px]">
+        <p className="text-gray-400">
           Please select a doctor
         </p>
-        <div className="absolute flex flex-row items-center justify-center top-[150px]">
+        <div className="relative w-full h-full flex flex-row items-center">
           <button
             type="button"
             onClick={onLeftClick}
             className="w-16 h-10 flex on-right
              justify-center items-center
              bg-gray-200 rounded-tr-full
+             absolute left-0 top-[50%] bottom-0
              rounded-br-full focus:bg-[#97bf0f]
               shadow-md"
           >
@@ -54,10 +55,12 @@ export default function Home() {
               fill="currentColor"
               viewBox="0 0 10 16"
             >
-              <path d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z" />
+              <path
+                d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z"
+              />
             </svg>
           </button>
-          <div className="wide">
+          <div className="wide relative left-[10%] h-full right-[10%] top-0 bottom-0">
             <ListDoctors doctors={showList} />
           </div>
           <div className="small">
@@ -68,6 +71,7 @@ export default function Home() {
             onClick={onRightClick}
             className="w-16 h-10 on-right
             flex justify-center items-center
+            absolute right-0 top-[50%] bottom-0
              bg-gray-200 rounded-tl-full
              rounded-bl-full focus:bg-[#97bf0f]
               shadow-md"
