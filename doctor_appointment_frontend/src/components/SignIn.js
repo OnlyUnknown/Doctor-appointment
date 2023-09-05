@@ -9,6 +9,7 @@ function SignIn() {
   const { setCurrentUser } = useUser();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
 
   const navigate = useNavigate(); // Move it here
 
@@ -23,11 +24,15 @@ function SignIn() {
       if (response.status === 200) {
         // Set the current user in the context
         setCurrentUser(response.data.user);
+        // save to session storage
+        // localStorage.setItem("currentUser", JSON.stringify({ currentUser }));
         // Redirect to a protected route or update the UI
         navigate('/'); // Redirect example
+        window.location.reload();
       } else {
         // Handle authentication failure, show an error message, etc.
         <div>{response}</div>;
+        setError(true);
       }
     } catch (error) {
       <div>{error}</div>;
@@ -76,6 +81,8 @@ function SignIn() {
             aria-label="B"
           />
         </Link>
+        {error
+        && <p style={{ color: 'red' }}>Email or Password incorrect</p>}
       </div>
     </div>
   );

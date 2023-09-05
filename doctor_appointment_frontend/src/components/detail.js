@@ -12,7 +12,7 @@ export default function Detail() {
   useEffect(() => {
     dispatch(fetchDoctors());
     setDoctor(doctors.find((doctor) => doctor.id.toString() === id));
-  }, [dispatch, doctors, id]);
+  }, [dispatch]);
   return (
     <div className="relative h-screen justify-around pr-[12px] sm:pt-[50px] sm:flex sm:pr-0">
       <div className="sm-[300px]h-full">
