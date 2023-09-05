@@ -10,9 +10,11 @@ import Reservation from './components/reservation';
 import Register from './components/Register';
 import SignIn from './components/SignIn';
 import RegisterPage from './components/RegistrationPage';
+import { UserProvider } from './components/UserContext';
 
 function App() {
   return (
+    <UserProvider>
     <div className="app">
       <BrowserRouter>
         <div className="grid-container">
@@ -32,6 +34,7 @@ function App() {
         </div>
       </BrowserRouter>
     </div>
+    </UserProvider>
   );
 }
 

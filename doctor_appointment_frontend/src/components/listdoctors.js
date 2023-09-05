@@ -4,8 +4,11 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 /* eslint-enable import/no-extraneous-dependencies */
 import '../css/home.css';
+import { useUser } from './UserContext';
 
 export default function ListDoctors({ doctors }) {
+  const { currentUser } = useUser();
+  console.log(currentUser)
   return (
     <div className="flex flex-wrap justify-center items-center">
       {doctors.map((doctor) => (
