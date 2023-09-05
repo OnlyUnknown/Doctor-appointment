@@ -44,9 +44,7 @@ function MyAppointment() {
               ))}
             </tbody>
 
-          ) : (
-            <div>There is no appointments yet or you haven`&rsquo;`t logged in yet</div>
-          )}
+          ) : null}
 
         </table>
       </div>

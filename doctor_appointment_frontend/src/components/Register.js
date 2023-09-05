@@ -44,7 +44,7 @@ function Register() {
       .then((data) => {
         // eslint-disable-next-line no-console
         console.log('Success:', data);
-        navigate('/sing_up');
+        navigate('/sign_in');
       });
   };
   const handleSubmit = (event) => {
