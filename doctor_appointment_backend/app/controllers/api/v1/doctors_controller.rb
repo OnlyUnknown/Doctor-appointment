@@ -16,6 +16,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def create
+    request.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001/api/v1/doctors'
     @doctor = Doctor.new(doctor_params)
 
     if @doctor.save
@@ -36,6 +37,6 @@ class Api::V1::DoctorsController < ApplicationController
   private
 
   def doctor_params
-    params.require(:doctor).permit(:name, :speciality, :description, :consultation_fees, :years_of_experience)
+    params.require(:doctor).permit(:name, :speciality, :description, :consultation_fees, :years_of_experience, :image)
   end
 end
