@@ -1,30 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/home.css';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
 import doc5 from './doc5.jpg';
+import { fetchDoctors } from '../Redux/feature/doctorSlice';
 
-function Reservation() {
-  const doctors = ['Docteur A', 'Docteur B', 'Docteur C'];
-  const [doctor, setDoctor] = useState('');
-  const [data, setData] = useState({
-    doctor: '',
-  });
+function Delete() {
+  const doctors = useSelector((state) => state.doctor.doctors);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchDoctors());
+  }, [dispatch]);
+
+  const [selectedDoctor, setSelectedDoctor] = useState('');
+
   const handleDoctorChange = (event) => {
-    setDoctor(event.target.value);
-    setData({ ...data, doctor: event.target.value });
+    setSelectedDoctor(event.target.value);
   };
-  const reserve = () => {
+
+  const deleteDoctor = () => {
+    if (!selectedDoctor) {
+      alert('Please select a doctor before deleting.');
+      return;
+    }
+
     axios
-      .delete('http://localhost:3000/id', {
-        headers: { 'Content-Type': 'application/json' },
+      .delete(`http://localhost:3000/api/v1/doctors/${selectedDoctor}`)
+      .then(() => {
+        setSelectedDoctor('');
+        dispatch(fetchDoctors());
       })
-      .then((response) => <div>{response}</div>)
-      .catch((error) => <div>{error}</div>);
+      .catch(() => {
+        /* empty */
+      });
   };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    reserve(data);
-  };
+
   return (
     <div
       className="h-screen reservation-container"
@@ -32,30 +42,31 @@ function Reservation() {
     >
       <div className="relative flex h-screen w-full flex-col items-center justify-center text-white reservation">
         <form
-          onSubmit={handleSubmit}
+          onSubmit={(e) => {
+            e.preventDefault();
+            deleteDoctor();
+          }}
           className="mx-auto mt-3 w-full flex justify-end max-w-sm grid-cols-2 sm:grid"
         >
           <div className="relative flex items-center justify-center">
             <select
               id="doctor"
               name="doctor"
-              value={doctor}
+              value={selectedDoctor}
               placeholder="Select a doctor"
               required
               onChange={handleDoctorChange}
-              className=" appearance-none mr-1 text-xl font-bold h-full rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+              className="appearance-none mr-1 text-xl text-black font-bold h-full rounded border bg-transparent p-4 py-2 leading-tight focus:shadow-outline focus:outline-none"
             >
-              <option value="" className="text-black">
-                Select a doctor
-              </option>
+              <option value="">Select a doctor</option>
               {doctors.map((doctor) => (
-                <option key={doctor} className="text-black" value={doctor}>
-                  {doctor}
+                <option key={doctor.id} value={doctor.id}>
+                  {doctor.name}
                 </option>
               ))}
             </select>
             <svg
-              className="absolute  h-3 w-3 text-black top-1/2 dark:text-white sm:left-40"
+              className="absolute h-3 w-3 text-black top-1/2 dark:text-white sm:left-40"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -82,4 +93,4 @@ function Reservation() {
   );
 }
 
-export default Reservation;
+export default Delete;

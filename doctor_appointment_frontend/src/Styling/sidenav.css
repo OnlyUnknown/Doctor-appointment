@@ -1,7 +1,7 @@
 .sidenav {
   height: 100%;
   width: 0;
-  position: fixed;
+  position: relative;
   z-index: 1;
   top: 0;
   left: 0;
@@ -46,9 +46,15 @@
   margin-left: 50px;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav { padding-top: 15px; }
-  .sidenav a { font-size: 18px; }
+@media screen and (height <= 450px) {
+  .sidenav {
+    padding-top: 15px;
+    position: fixed;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 
 .active-link {
@@ -72,9 +78,10 @@
   display: none;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (width <= 700px) {
   #mySidenav {
     width: 0%;
+    position: fixed;
   }
 
   .hidden {
