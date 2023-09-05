@@ -21,24 +21,27 @@ function SideNav() {
         onClick={openNav}
       >
         <img alt="togglebutton1" src={`${process.env.PUBLIC_URL}/menu.png`} className="toggle-button" />
-        
+
       </button>
-     
+
       <div id="mySidenav" className="sidenav fixed">
-      {currentUser === null ? (
-  <NavLink
-    onClick={openNav}
-    className={({ isActive }) => (isActive ? 'active-link' : 'none')}
-    to="/registration_page"
-  >
-    Registration
-  </NavLink>
-) : (
-  // Render something else when currentUser is not null
-  // For example, a different link or a message
-  <NavLink>Welcome {currentUser.name}</NavLink>
-)}
-        
+        {currentUser === null ? (
+          <NavLink
+            onClick={openNav}
+            className={({ isActive }) => (isActive ? 'active-link' : 'none')}
+            to="/registration_page"
+          >
+            Registration
+          </NavLink>
+        ) : (
+        // Render something else when currentUser is not null
+        // For example, a different link or a message
+          <NavLink>
+            Welcome
+            {currentUser.name}
+          </NavLink>
+        )}
+
         <NavLink
           onClick={openNav}
           to="/"
@@ -46,10 +49,12 @@ function SideNav() {
         >
           Doctors
         </NavLink>
-        {currentUser !== null ? (        <NavLink onClick={openNav} className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/my_appointment">
-          My
-          Appointment
-        </NavLink>):null}
+        {currentUser !== null ? (
+          <NavLink onClick={openNav} className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/my_appointment">
+            My
+            Appointment
+          </NavLink>
+        ) : null}
 
         <NavLink
           onClick={openNav}
