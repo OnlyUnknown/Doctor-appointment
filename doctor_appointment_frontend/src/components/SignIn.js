@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import '../css/home.css';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import doc5 from './doc5.jpg';
 import { useUser } from './UserContext';
-import axios from 'axios';
+
 function SignIn() {
   const { setCurrentUser } = useUser();
   const [email, setEmail] = useState('');
@@ -13,24 +14,23 @@ function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       // Make an API request to your Rails backend to authenticate the user
-      const response = await axios.post('http://localhost:3000/login', {user:{ email, password }});
+      const response = await axios.post('http://localhost:3000/login', { user: { email, password } });
 
       // Handle success or failure
       if (response.status === 200) {
         // Set the current user in the context
         setCurrentUser(response.data.user);
-        console.log(response.data);
         // Redirect to a protected route or update the UI
         navigate('/'); // Redirect example
       } else {
         // Handle authentication failure, show an error message, etc.
-        console.error(response);
+        <div>{response}</div>;
       }
     } catch (error) {
-      console.error(error);
+      <div>{error}</div>;
       // Handle network errors or other exceptions
     }
   };

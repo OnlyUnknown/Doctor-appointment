@@ -7,9 +7,10 @@ class Api::V1::DoctorsUsersController < ApplicationController
   def show
     user_id_to_include = params[:id]
     doctor_users = DoctorsUser.includes(:user, :doctor).where(user_id: user_id_to_include)
-    render json: doctor_users, include: { 
-      doctor: { only: :name },
-    }, methods: [:city, :appontment_date]  end
+    render json: doctor_users, include: {
+      doctor: { only: :name }
+    }, methods: %i[city appontment_date]
+  end
 
   def create
     doctors_user = DoctorsUser.new(doctors_user_params)

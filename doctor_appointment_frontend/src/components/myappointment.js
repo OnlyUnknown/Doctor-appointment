@@ -3,14 +3,14 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAppointments } from '../Redux/feature/appointmentSlice';
 import { useUser } from './UserContext';
-  
+
 function MyAppointment() {
   const { currentUser } = useUser();
   const appointment = useSelector((state) => state.appointment);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchAppointments(currentUser.id));
-  }, [dispatch]);
+  }, [dispatch, currentUser.id]);
   return (
     <section id="main">
 
@@ -45,7 +45,7 @@ function MyAppointment() {
             </tbody>
 
           ) : (
-            <div>There is no appointments yet or you haven't logged in yet</div>
+            <div>There is no appointments yet or you haven`&rsquo;`t logged in yet</div>
           )}
 
         </table>
