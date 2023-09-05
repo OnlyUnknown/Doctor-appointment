@@ -29,6 +29,8 @@
 
 **Doctor Appointment App** is a React and Rails-built fully functional app. The Doctor appointment app allows users to add, remove and book an appointment with a doctor. 
 
+<a href="https://github.com/users/OnlyUnknown/projects/12">Kanban Board</a>
+
 ## 🛠️ Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
