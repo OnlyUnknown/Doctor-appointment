@@ -5,8 +5,11 @@ class Api::V1::DoctorsUsersController < ApplicationController
   end
 
   def show
-    doctors_user = DoctorsUser.find(params[:id])
-    render json: doctors_user
+    user_id_to_include = params[:id]
+    doctor_users = DoctorsUser.includes(:user, :doctor).where(user_id: user_id_to_include)
+    render json: doctor_users, include: {
+      doctor: { only: :name }
+    }, methods: %i[city appontment_date]
   end
 
   def create

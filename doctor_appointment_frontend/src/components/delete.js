@@ -20,7 +20,7 @@ function Delete() {
 
   const deleteDoctor = () => {
     if (!selectedDoctor) {
-      alert('Please select a doctor before deleting.');
+      <div>error</div>;
       return;
     }
 

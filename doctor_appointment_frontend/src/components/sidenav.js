@@ -1,7 +1,9 @@
 import '../Styling/sidenav.css';
 import { NavLink } from 'react-router-dom';
+import { useUser } from './UserContext';
 
 function SideNav() {
+  const { currentUser } = useUser();
   const openNav = () => {
     if (document.getElementById('mySidenav').style.width === '100%' && window.innerWidth < 700) {
       document.getElementById('mySidenav').style.width = '0%';
@@ -19,15 +21,27 @@ function SideNav() {
         onClick={openNav}
       >
         <img alt="togglebutton1" src={`${process.env.PUBLIC_URL}/menu.png`} className="toggle-button" />
+
       </button>
+
       <div id="mySidenav" className="sidenav fixed">
-        <NavLink
-          onClick={openNav}
-          className={({ isActive }) => (isActive ? 'active-link' : 'none')}
-          to="/registration_page"
-        >
-          Registration
-        </NavLink>
+        {currentUser === null ? (
+          <NavLink
+            onClick={openNav}
+            className={({ isActive }) => (isActive ? 'active-link' : 'none')}
+            to="/registration_page"
+          >
+            Registration
+          </NavLink>
+        ) : (
+        // Render something else when currentUser is not null
+        // For example, a different link or a message
+          <NavLink>
+            Welcome
+            {currentUser.name}
+          </NavLink>
+        )}
+
         <NavLink
           onClick={openNav}
           to="/"
@@ -35,10 +49,13 @@ function SideNav() {
         >
           Doctors
         </NavLink>
-        <NavLink onClick={openNav} className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/my_appointment">
-          My
-          Appointment
-        </NavLink>
+        {currentUser !== null ? (
+          <NavLink onClick={openNav} className={({ isActive }) => (isActive ? 'active-link' : 'none')} to="/my_appointment">
+            My
+            Appointment
+          </NavLink>
+        ) : null}
+
         <NavLink
           onClick={openNav}
           className={({ isActive }) => (isActive ? 'active-link' : 'none')}
@@ -54,25 +71,6 @@ function SideNav() {
           Delete a
           Doctor
         </NavLink>
-      </div>
-      <div>
-
-        <button
-          type="button"
-          className="visually-hidden"
-          tabIndex="0"
-          onClick={openNav}
-        >
-          <img alt="togglebutton1" src={`${process.env.PUBLIC_URL}/icons8-square-50.png`} className="toggle-button2" />
-        </button>
-        <button
-          type="button"
-          className="visually-hidden"
-          tabIndex="0"
-          onClick={openNav}
-        >
-          <img alt="togglebutton1" src={`${process.env.PUBLIC_URL}/icons8-arrow-100.png`} className="toggle-button3" />
-        </button>
       </div>
     </section>
   );

@@ -1,44 +1,38 @@
 import React, { useState } from 'react';
 import '../css/home.css';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import doc5 from './doc5.jpg';
+import { useUser } from './UserContext';
 
 function SignIn() {
-  const navigate = useNavigate();
+  const { setCurrentUser } = useUser();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [data, setData] = useState({
-    email: '',
-    password: '',
-  });
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-    setData({ ...data, email: event.target.value });
-  };
+  const navigate = useNavigate(); // Move it here
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-    setData({ ...data, password: event.target.value });
-  };
-  const reserve = (data) => {
-    fetch('http://localhost:3000/api/v1/users/index', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // eslint-disable-next-line no-console
-        console.log('Success:', data);
-        // eslint-disable-next-line no-alert
-        alert('Appointment booked successfully');
-        navigate('/');
-      });
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    reserve(data);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Make an API request to your Rails backend to authenticate the user
+      const response = await axios.post('http://localhost:3000/login', { user: { email, password } });
+
+      // Handle success or failure
+      if (response.status === 200) {
+        // Set the current user in the context
+        setCurrentUser(response.data.user);
+        // Redirect to a protected route or update the UI
+        navigate('/'); // Redirect example
+      } else {
+        // Handle authentication failure, show an error message, etc.
+        <div>{response}</div>;
+      }
+    } catch (error) {
+      <div>{error}</div>;
+      // Handle network errors or other exceptions
+    }
   };
   return (
     <div className="register h-screen reservation-container" style={{ backgroundImage: `url(${doc5})`, backgroundSize: 'cover' }}>
@@ -53,7 +47,7 @@ function SignIn() {
               value={email}
               placeholder="email"
               required
-              onChange={handleEmailChange}
+              onChange={(e) => setEmail(e.target.value)}
               className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
@@ -64,7 +58,7 @@ function SignIn() {
               name="password"
               value={password}
               placeholder="password"
-              onChange={handlePasswordChange}
+              onChange={(e) => setPassword(e.target.value)}
               className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
