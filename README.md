@@ -50,7 +50,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Kanban Board
+## 💻 Kanban Board <a name="kanban board"></a>
 
 <a href="https://github.com/users/OnlyUnknown/projects/12">Kanban Board</a>
 
