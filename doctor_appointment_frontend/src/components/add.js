@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import '../css/home.css';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 import doc5 from './doc5.jpg';
 
 function DoctorForm() {
-  const [selectedFile, setSelectedFile] = useState(null);
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [speciality, setSpeciality] = useState('');
   const [description, setDescription] = useState('');
@@ -18,11 +17,6 @@ function DoctorForm() {
     consultation_fees: '',
     years_of_experience: '',
   });
-
-  const fileSelectedHandler = (event) => {
-    setSelectedFile(event.target.files[0]);
-    setData({ ...data, image: selectedFile });
-  };
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -41,39 +35,29 @@ function DoctorForm() {
 
   const handleExperienceChange = (event) => {
     setExperience(event.target.value);
-    setData({ ...data, experience: event.target.value });
+    setData({ ...data, years_of_experience: event.target.value });
   };
 
   const handleFeesChange = (event) => {
     setFees(event.target.value);
     setData({ ...data, consultation_fees: event.target.value });
   };
-  const handleSubmit = async (event) => {
+  const addDoctor = (data) => {
+    fetch('http://localhost:3000/api/v1/doctors', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // eslint-disable-next-line no-console
+        console.log('Success:', data);
+        navigate('/');
+      });
+  };
+  const handleSubmit = (event) => {
     event.preventDefault();
-    if (selectedFile instanceof File) {
-      const formData = new FormData();
-      formData.append('doctor[name]', name);
-      formData.append('doctor[speciality]', speciality);
-      formData.append('doctor[description]', description);
-      formData.append('doctor[consultation_fees]', fees);
-      formData.append('doctor[years_of_experience]', experience);
-      formData.append('doctor[image]', selectedFile, selectedFile.name);
-
-      try {
-        await axios.post(
-          'http://localhost:3000/api/v1/doctors',
-          formData,
-          {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-              'Access-Control-Allow-Origin': 'http://localhost:3000',
-            },
-          },
-        );
-      } catch (error) {
-        /* empty */
-      }
-    }
+    addDoctor(data);
   };
 
   return (
@@ -145,17 +129,6 @@ function DoctorForm() {
               placeholder="Description"
               onChange={handleDescriptionChange}
               className="whiteInp w-3/4 placeholder:text-white appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
-            />
-          </div>
-          <div className="mb-4 flex items-center justify-center">
-            <input
-              type="file"
-              accept="image/*"
-              id="image"
-              name="image"
-              placeholder="File choose"
-              onChange={fileSelectedHandler}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
           <button

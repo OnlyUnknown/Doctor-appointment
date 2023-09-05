@@ -44,8 +44,6 @@ function Register() {
       .then((data) => {
         // eslint-disable-next-line no-console
         console.log('Success:', data);
-        // eslint-disable-next-line no-alert
-        alert('Appointment booked successfully');
         navigate('/sing_up');
       });
   };
