@@ -10,7 +10,7 @@ const initialState = {
 const fetchAppointments = createAsyncThunk(
   'appoitnment/fetchAppointments',
   () => axios
-    .get('https://localhost:3000/api/v1/doctors_users')
+    .get('http://localhost:3000/api/v1/doctors_users')
     .then((response) => response.data.map((user) => user)),
 );
 
@@ -25,6 +25,7 @@ const appointmentSlice = createSlice({
       state.loading = false;
       state.appointments = action.payload;
       state.error = '';
+      console.log(state.appointments.user_id)
     });
     builder.addCase(fetchAppointments.rejected, (state, action) => {
       state.loading = false;

@@ -2,8 +2,10 @@ import '../Styling/myappointment.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAppointments } from '../Redux/feature/appointmentSlice';
-
+import { useUser } from './UserContext';
+  
 function MyAppointment() {
+  const { currentUser } = useUser();
   const appointment = useSelector((state) => state.appointment);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -18,7 +20,6 @@ function MyAppointment() {
           <thead>
             <tr>
               <th>Doctor Name</th>
-              <th>Speciality</th>
               <th>City</th>
               <th>Date</th>
             </tr>
@@ -35,10 +36,9 @@ function MyAppointment() {
               {appointment.appointments.map((app) => (
 
                 <tr key={app.id}>
-                  <td>{app.name}</td>
-                  <td>{app.username}</td>
-                  <td>{app.address.city}</td>
-                  <td>{app.address.zipcode}</td>
+                  <td>{app.doctor.name}</td>
+                  <td>{app.city}</td>
+                  <td>{app.appontment_date}</td>
                 </tr>
 
               ))}

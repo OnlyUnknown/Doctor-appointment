@@ -35,7 +35,7 @@ function Register() {
     setData({ ...data, password_confirmation: event.target.value });
   };
   const reserve = (data) => {
-    fetch('http://localhost:3000/api/v1/users/create', {
+    fetch('http://localhost:3000/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -46,7 +46,7 @@ function Register() {
         console.log('Success:', data);
         // eslint-disable-next-line no-alert
         alert('Appointment booked successfully');
-        navigate('/');
+        navigate('/sing_up');
       });
   };
   const handleSubmit = (event) => {
