@@ -1,7 +1,11 @@
 class Api::V1::DoctorsController < ApplicationController
   def index
     @doctors = Doctor.all
-    render json: @doctors.with_attached_image
+    if @doctors
+      render json: @doctors.with_attached_image
+    else
+      render json: @doctors.errors.full_messages
+    end
   end
 
   def new
@@ -10,7 +14,11 @@ class Api::V1::DoctorsController < ApplicationController
 
   def show
     @doctor = Doctor.find(params[:id])
-    render json: @doctor
+    if @doctor
+      render json: @doctor
+    else
+      render json: @doctor.errors.full_messages
+    end
   end
 
   def create
@@ -26,9 +34,11 @@ class Api::V1::DoctorsController < ApplicationController
 
   def destroy
     @doctor = Doctor.find(params[:id])
-    @doctor.destroy
-    # response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001'
-    render json: { message: 'Doctor deleted' }
+    if @doctor.destroy
+      render json: { message: 'Doctor deleted' }
+    else
+      render json: @doctor.errors.full_messages
+    end
   end
 
   private
