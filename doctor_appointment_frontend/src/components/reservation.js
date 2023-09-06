@@ -9,18 +9,18 @@ import { useUser } from './UserContext';
 
 function Reservation() {
   const doctors = useSelector((state) => state.doctor.doctors);
-  // const [doctor, setDoctor] = React.useState({});
+  const [errors, setError] = useState(null);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchDoctors());
   }, [dispatch]);
-  
+
   const { currentUser } = useUser();
   const [selectedDoctor, setSelectedDoctor] = useState('');
 
   const cities = ['Bamako', 'Dakar', 'Yaounde', 'Cairo', 'Alger'];
   const { id } = useParams();
-  
+
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
@@ -28,7 +28,7 @@ function Reservation() {
     city: '',
     doctor_id: '',
     appontment_date: '',
-    user_id: currentUser.id,
+    user_id: currentUser ? currentUser.id : -1,
   });
 
   const handleCityChange = (event) => {
@@ -37,14 +37,13 @@ function Reservation() {
   };
 
   const handleDoctorChange = (event) => {
-    if(id) {
+    if (id) {
       setSelectedDoctor(doctors.find((doc) => doc.id === parseInt(id, 10)));
       setData({ ...data, doctor_id: id });
-      } else{
-        setSelectedDoctor(event.target.value);
-        setData({ ...data, doctor_id: event.target.value });
+    } else {
+      setSelectedDoctor(event.target.value);
+      setData({ ...data, doctor_id: event.target.value });
     }
-    
   };
 
   const handleDateChange = (event) => {
@@ -54,28 +53,26 @@ function Reservation() {
 
   const handleTimeChange = (event) => {
     setSelectedTime(event.target.value);
-    // setData({ ...data, selectedTime: event.target.value });
   };
   const reserve = (data) => {
     axios
       .post('http://localhost:3000/api/v1/doctors_users', data, {
         headers: { 'Content-Type': 'application/json' },
       })
-      .then((response) => {
-        // eslint-disable-next-line no-console
-        console.log('Success:', response.data);
-        // eslint-disable-next-line no-alert
-        alert('Appointment booked successfully');
+      .then(() => {
+        setError(false);
       })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error('Error:', error);
-        // eslint-disable-next-line no-alert
-        alert('An error occurred while booking the appointment');
+      .catch(() => {
+        setError(true);
       });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!currentUser) {
+      setError(true);
+      return;
+    }
+    setError(null);
     reserve(data);
   };
   return (
@@ -209,6 +206,10 @@ function Reservation() {
             </svg>
           </button>
         </Link>
+        {errors === true
+          && <p style={{ color: 'red' }}>An error occurred while booking the appointment</p>}
+        {errors === false
+          && <p style={{ color: 'green' }}>Appointment booked successfully</p>}
       </div>
     </div>
   );

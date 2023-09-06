@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../css/home.css';
 import { Link, useNavigate } from 'react-router-dom';
 import doc5 from './doc5.jpg';
+import { useUser } from './UserContext';
 
 function Register() {
   const navigate = useNavigate();
@@ -9,6 +11,7 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordconfirmation, setPasswordConfirmation] = useState('');
+  const { setCurrentUser } = useUser();
   const [data, setData] = useState({
     name: '',
     email: '',
@@ -35,16 +38,17 @@ function Register() {
     setData({ ...data, password_confirmation: event.target.value });
   };
   const reserve = (data) => {
-    fetch('http://localhost:3000/signup', {
-      method: 'POST',
+    axios.post('http://localhost:3000/signup', data, {
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // eslint-disable-next-line no-console
-        console.log('Success:', data);
-        navigate('/sign_in');
+      .then((response) => {
+        setCurrentUser(response.data.resource);
+        // Naviguer vers '/sign_in' après le succès, si nécessaire
+        navigate('/');
+      })
+      .catch((error) => {
+        // Erreur
+        console.error('Error:', error);
       });
   };
   const handleSubmit = (event) => {
@@ -65,7 +69,7 @@ function Register() {
               required
               placeholder="Name"
               onChange={handleNameChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+              className="whiteInp w-3/4 appearance-none placeholder:text-white rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
 
@@ -77,7 +81,7 @@ function Register() {
               placeholder="email"
               required
               onChange={handleEmailChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+              className="whiteInp w-3/4 appearance-none placeholder:text-white rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
           <div className="mb-4 flex items-center justify-center">
@@ -88,7 +92,7 @@ function Register() {
               value={password}
               placeholder="password"
               onChange={handlePasswordChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+              className="whiteInp w-3/4 appearance-none placeholder:text-white rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
           <div className="mb-4 flex items-center justify-center">
@@ -99,7 +103,7 @@ function Register() {
               value={passwordconfirmation}
               placeholder="pass Confirmation"
               onChange={handlePasswordConfirmationChange}
-              className="whiteInp w-3/4 appearance-none rounded border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
+              className="whiteInp w-3/4 appearance-none rounded placeholder:text-white border bg-transparent p-4 py-2 leading-tight text-white focus:shadow-outline focus:outline-none"
             />
           </div>
           <button

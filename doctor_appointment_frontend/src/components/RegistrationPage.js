@@ -21,7 +21,7 @@ function RegisterPage() {
           <Link to="/sign_in">
             <button
               type="button"
-              className="bg-white  text-[#97bf0f] font-bold sm: p-2 rounded-full mt-3 focus:outline-none focus:shadow-outline"
+              className="bg-white  text-[#97bf0f] font-bold sm: p-2 rounded-full mt-3 mr:1 focus:outline-none focus:shadow-outline"
             >
               Sign IN
             </button>
