@@ -48,7 +48,7 @@ function Register() {
       })
       .catch((error) => {
         // Erreur
-        console.error('Error:', error);
+        <div>{error}</div>;
       });
   };
   const handleSubmit = (event) => {

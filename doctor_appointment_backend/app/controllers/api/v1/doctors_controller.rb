@@ -18,7 +18,7 @@ class Api::V1::DoctorsController < ApplicationController
 
     if @doctor.save
       render json: @doctor, status: :created,
-        serializer: DoctorSerializer
+             serializer: DoctorSerializer
     else
       render json: @doctor.errors, status: :unprocessable_entity
     end
