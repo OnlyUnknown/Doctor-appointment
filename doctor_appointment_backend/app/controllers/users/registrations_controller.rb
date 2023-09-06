@@ -3,7 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
     if resource.save
-      render json: resource, message: 'Signed up successfully.'
+      render json: { resource: { id: resource.id, name: resource.name, email: resource.email } }
     else
       render json: { errors: resource.errors }, status: :unprocessable_entity
     end

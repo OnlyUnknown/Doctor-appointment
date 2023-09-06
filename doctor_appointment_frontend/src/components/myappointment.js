@@ -26,16 +26,16 @@ function MyAppointment() {
           </thead>
           {appointment.loading && <div>Loading...</div>}
           {!appointment.loading && appointment.error ? (
-            <div>
+            <p>
               Error
               {appointment.error}
-            </div>
+            </p>
           ) : null}
           {!appointment.loading && appointment.appointments.length && currentUser ? (
             <tbody>
               {appointment.appointments.map((app) => (
 
-                <tr key={app.id}>
+                <tr key={app.id + 1}>
                   <td>{app.doctor.name}</td>
                   <td>{app.city}</td>
                   <td>{app.appontment_date}</td>

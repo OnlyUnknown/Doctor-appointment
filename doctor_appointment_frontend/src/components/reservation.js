@@ -5,27 +5,30 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import doc5 from './doc5.jpg';
 import { fetchDoctors } from '../Redux/feature/doctorSlice';
+import { useUser } from './UserContext';
 
 function Reservation() {
-  const cities = ['Ville A', 'Ville B', 'Ville C'];
-  const doctors = ['Docteur A', 'Docteur B', 'Docteur C'];
+  const doctors = useSelector((state) => state.doctor.doctors);
+  const [errors, setError] = useState(null);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchDoctors());
+  }, [dispatch]);
+
+  const { currentUser } = useUser();
+  const [selectedDoctor, setSelectedDoctor] = useState('');
+
+  const cities = ['Bamako', 'Dakar', 'Yaounde', 'Cairo', 'Alger'];
   const { id } = useParams();
+
   const [city, setCity] = useState('');
-  const [doctor, setDoctor] = useState('');
   const [date, setDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [data, setData] = useState({
     city: '',
-    doctor: '',
-    date: '',
-    selectedTime: '',
-  });
-
-  // eslint-disable-next-line no-unused-vars
-  const doctorsData = useSelector((state) => state.doctor.doctors);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchDoctors());
+    doctor_id: '',
+    appontment_date: '',
+    user_id: currentUser ? currentUser.id : -1,
   });
 
   const handleCityChange = (event) => {
@@ -34,39 +37,42 @@ function Reservation() {
   };
 
   const handleDoctorChange = (event) => {
-    setDoctor(event.target.value);
-    setData({ ...data, doctor: event.target.value });
+    if (id) {
+      setSelectedDoctor(doctors.find((doc) => doc.id === parseInt(id, 10)));
+      setData({ ...data, doctor_id: id });
+    } else {
+      setSelectedDoctor(event.target.value);
+      setData({ ...data, doctor_id: event.target.value });
+    }
   };
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
-    setData({ ...data, date: event.target.value });
+    setData({ ...data, appontment_date: event.target.value });
   };
 
   const handleTimeChange = (event) => {
     setSelectedTime(event.target.value);
-    setData({ ...data, selectedTime: event.target.value });
   };
   const reserve = (data) => {
     axios
-      .post('http://localhost:3000/reservation', data, {
+      .post('http://localhost:3000/api/v1/doctors_users', data, {
         headers: { 'Content-Type': 'application/json' },
       })
-      .then((response) => {
-        // eslint-disable-next-line no-console
-        console.log('Success:', response.data);
-        // eslint-disable-next-line no-alert
-        alert('Appointment booked successfully');
+      .then(() => {
+        setError(false);
       })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error('Error:', error);
-        // eslint-disable-next-line no-alert
-        alert('An error occurred while booking the appointment');
+      .catch(() => {
+        setError(true);
       });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!currentUser) {
+      setError(true);
+      return;
+    }
+    setError(null);
     reserve(data);
   };
   return (
@@ -124,7 +130,7 @@ function Reservation() {
               <select
                 id="doctor"
                 name="doctor"
-                value={doctor}
+                value={selectedDoctor}
                 placeholder="Select a doctor"
                 required
                 onChange={handleDoctorChange}
@@ -134,8 +140,8 @@ function Reservation() {
                   Select a doctor
                 </option>
                 {doctors.map((doctor) => (
-                  <option key={doctor} className="text-black" value={doctor}>
-                    {doctor}
+                  <option key={doctor.id} className="text-black" value={doctor.id}>
+                    {doctor.name}
                   </option>
                 ))}
               </select>
@@ -200,6 +206,10 @@ function Reservation() {
             </svg>
           </button>
         </Link>
+        {errors === true
+          && <p style={{ color: 'red' }}>An error occurred while booking the appointment</p>}
+        {errors === false
+          && <p style={{ color: 'green' }}>Appointment booked successfully</p>}
       </div>
     </div>
   );

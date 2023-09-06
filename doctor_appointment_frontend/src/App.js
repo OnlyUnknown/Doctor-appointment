@@ -11,6 +11,7 @@ import Register from './components/Register';
 import SignIn from './components/SignIn';
 import RegisterPage from './components/RegistrationPage';
 import { UserProvider } from './components/UserContext';
+import Logout from './components/logout';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/registration_page" element={<RegisterPage />} />
+              <Route path="/logout" element={<Logout />} />
               <Route path="add_doctor" element={<DoctorForm />} />
               <Route path="delete" element={<Delete />} />
               <Route path="my_appointment" element={<MyAppointment />} />
