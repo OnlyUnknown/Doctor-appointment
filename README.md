@@ -138,7 +138,7 @@ cd doctor_appointment_frontend
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add Medical history for users or patient**
+- [ ] **Add Medical history for users or patients**
 - [ ] **Add prescription information linked to each doctor appointment**
 - [ ] **A billing information**
 
