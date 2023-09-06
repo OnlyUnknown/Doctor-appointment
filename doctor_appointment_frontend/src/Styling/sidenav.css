@@ -1,0 +1,102 @@
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 5px;
+}
+
+.visually-hidden > img {
+  visibility: visible;
+}
+
+.visually-hidden {
+  position: fixed;
+  left: -9999px;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+  font-weight: bold;
+  color: #525151;
+}
+
+.sidenav a:hover {
+  color: #0c55f3;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (height <= 450px) {
+  .sidenav {
+    padding-top: 15px;
+    position: fixed;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.active-link {
+  background: #97bf0f;
+  color: white;
+}
+
+#main {
+  transition: 1s;
+}
+
+#mySidenav {
+  width: 250px;
+}
+
+.toggle-button {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (width <= 700px) {
+  #mySidenav {
+    width: 0%;
+    position: fixed;
+  }
+
+  .hidden {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    top: 10px;
+  }
+
+  .toggle-button {
+    display: block;
+    position: fixed;
+    left: 10px;
+    z-index: 1000;
+    width: 50px;
+    transition: 0.5s;
+  }
+}

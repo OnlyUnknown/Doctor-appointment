@@ -1,0 +1,11 @@
+.app {
+  text-align: center;
+}
+
+@media (width >= 700px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto 3fr;
+    height: 100vh;
+  }
+}

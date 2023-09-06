@@ -50,16 +50,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 💻 Kanban Board <a name="kanban board"></a>
-
-<a href="https://github.com/users/OnlyUnknown/projects/12">Kanban Board</a>
-
-<a href="https://user-images.githubusercontent.com/116448416/262923531-c43d80cf-c1a8-435b-b64b-55a23b344eb5.png">Kanban Board Screenshot</a>
-
-We are a team of four members.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -85,20 +75,16 @@ Clone this repository to your desired folder:
 
 Install this project with:
 ```
-cd doctor_appointment_backend
-  bundle install
-cd doctor_appointment_frontend
-  npm install
+bundle install
+npm install
 ```
 
 ### Usage
 
 To run the project, execute the following command:
 ```
-cd doctor_appointment_backend
-  rails server
-cd doctor_appointment_frontend
-  npm start
+rails server
+npm start
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -138,7 +124,7 @@ cd doctor_appointment_frontend
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add Medical history for users or patients**
+- [ ] **Add Medical history for users or patient**
 - [ ] **Add prescription information linked to each doctor appointment**
 - [ ] **A billing information**
 

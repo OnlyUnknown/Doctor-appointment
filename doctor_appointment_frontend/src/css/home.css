@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 910px) {
+  .on-right {
+    display: none;
+  }
+}
+
+@media (min-width: 475px) {
+  .wide {
+    display: block;
+  }
+
+  .small {
+    display: none;
+  }
+}
+
+@media (max-width: 674px) {
+  .wide {
+    display: none;
+  }
+
+  .small {
+    display: block;
+  }
+}
+
+.transition-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.reservation {
+  background-color: rgba(150, 191, 1, 0.9);
+}
+
+#file-upload-button {
+  background-color: transparent;
+  border: none;
+}

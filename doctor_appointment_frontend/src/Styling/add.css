@@ -1,0 +1,11 @@
+.background {
+  background-size: cover;
+  background-color: #97bf0f;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.addpage {
+  position: fixed;
+  margin-left: 250px;
+}
