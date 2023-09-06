@@ -3,8 +3,10 @@ import '../css/home.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import doc5 from './doc5.jpg';
+import { useNavigate } from 'react-router-dom';
 
 function DoctorForm() {
+  const navigate = useNavigate()
   const [selectedFile, setSelectedFile] = useState(null);
   const [name, setName] = useState('');
   const [speciality, setSpeciality] = useState('');
@@ -73,6 +75,7 @@ function DoctorForm() {
       } catch (error) {
         /* empty */
       }
+      navigate('/');
     }
   };
 

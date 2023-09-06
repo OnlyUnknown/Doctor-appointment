@@ -7,23 +7,27 @@ import { fetchDoctors } from '../Redux/feature/doctorSlice';
 export default function Home() {
   const [index, setIndex] = useState(0);
 
-  const doctors = useSelector((state) => state.doctor.doctors);
+  const doctors = useSelector((state) => state.doctor);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchDoctors());
-  });
+  }, [dispatch]);
 
-  const [showList, setShowList] = useState(doctors.slice(0, 3));
-
+  const [showList, setShowList] = useState(doctors.doctors.slice(0, 3));
+  useEffect(() => {
+    if (doctors.doctors.length > 0) {
+      setShowList(doctors.doctors.slice(index, index + 3));
+    }
+  }, [doctors.doctors, index]);
   const onRightClick = () => {
-    if (index < doctors.length - 3) {
-      setShowList(doctors.slice(index + 1, index + 4));
+    if (index < doctors.doctors.length - 3) {
+      setShowList(doctors.doctors.slice(index + 1, index + 4));
       setIndex(index + 1);
     }
   };
   const onLeftClick = () => {
     if (index > 0) {
-      setShowList(doctors.slice(index - 1, index + 2));
+      setShowList(doctors.doctors.slice(index - 1, index + 2));
       setIndex(index - 1);
     }
   };
@@ -60,12 +64,21 @@ export default function Home() {
               />
             </svg>
           </button>
+          {doctors.loading && <div className='relative flex w-full flex-col items-center justify-center'>Loading...</div>}
+          {!doctors.loading && doctors.error ? (
+            <p>
+              Error
+              {doctors.error}
+            </p>
+          ) : null}
+          {!doctors.loading && doctors.doctors.length > 0 ? (
           <div className="wide relative left-[10%] h-full right-[10%] top-0 bottom-0">
             <ListDoctors doctors={showList} />
-          </div>
+          </div>) : null}
+          {!doctors.loading && doctors.doctors.length > 0 ? (
           <div className="small">
-            <ListDoctors doctors={doctors} />
-          </div>
+            <ListDoctors doctors={doctors.doctors} />
+          </div>) : null }
           <button
             type="button"
             onClick={onRightClick}
