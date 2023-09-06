@@ -19,8 +19,8 @@ const doctorSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(fetchDoctors.fulfilled, (state, action) => {
-      state.loading = false;
       state.doctors = action.payload;
+      state.loading = false;
       state.error = '';
     });
     builder.addCase(fetchDoctors.rejected, (state, action) => {
