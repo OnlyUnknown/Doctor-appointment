@@ -30,6 +30,13 @@ function SideNav() {
       </button>
 
       <div id="mySidenav" className="sidenav fixed">
+      <div className="logo relative top-0 left-[50%] sm:mb-16">
+          <img
+            alt="logo"
+            src={log_doc}
+            className="logo-image w-16 h-16  "
+          />
+        </div>
         {currentUser === null ? (
           <NavLink
             onClick={openNav}
@@ -82,13 +89,6 @@ function SideNav() {
         >
           Delete a Doctor
         </NavLink>
-        <div className="logo absolute top-0 lef-[10px]">
-          <img
-            alt="logo"
-            src={log_doc}
-            className="logo-image w-10 h-10"
-          />
-        </div>
       </div>
     </section>
   );
