@@ -1,15 +1,23 @@
 class Api::V1::DoctorsUsersController < ApplicationController
   def index
     doctors_users = DoctorsUser.all
-    render json: doctors_users
+    if doctors_users
+      render json: doctors_users
+    else
+      render json: doctors_users.errors.full_messages
+    end
   end
 
   def show
     user_id_to_include = params[:id]
     doctor_users = DoctorsUser.includes(:user, :doctor).where(user_id: user_id_to_include)
-    render json: doctor_users, include: {
-      doctor: { only: :name }
-    }, methods: %i[city appontment_date]
+    if doctor_users
+      render json: doctor_users, include: {
+        doctor: { only: :name }
+      }, methods: %i[city appontment_date]
+    else
+      render json: doctor_users.errors.full_messages
+    end
   end
 
   def create
@@ -32,8 +40,11 @@ class Api::V1::DoctorsUsersController < ApplicationController
 
   def destroy
     doctors_user = DoctorsUser.find(params[:id])
-    doctors_user.destroy
-    head :no_content
+    if doctors_user.destroy
+      head :no_content
+    else
+      render json: { error: 'DoctorsUser not found' }, status: :not_found
+    end
   end
 
   private
