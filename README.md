@@ -85,16 +85,20 @@ Clone this repository to your desired folder:
 
 Install this project with:
 ```
-bundle install
-npm install
+cd doctor_appointment_backend
+  bundle install
+cd doctor_appointment_frontend
+  npm install
 ```
 
 ### Usage
 
 To run the project, execute the following command:
 ```
-rails server
-npm start
+cd doctor_appointment_backend
+  rails server
+cd doctor_appointment_frontend
+  npm start
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
