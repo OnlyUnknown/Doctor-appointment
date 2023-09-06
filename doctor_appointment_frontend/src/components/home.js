@@ -64,7 +64,7 @@ export default function Home() {
               />
             </svg>
           </button>
-          {doctors.loading && <div className='relative flex w-full flex-col items-center justify-center'>Loading...</div>}
+          {doctors.loading && <div className="relative flex w-full flex-col items-center justify-center">Loading...</div>}
           {!doctors.loading && doctors.error ? (
             <p>
               Error
@@ -72,13 +72,15 @@ export default function Home() {
             </p>
           ) : null}
           {!doctors.loading && doctors.doctors.length > 0 ? (
-          <div className="wide relative left-[10%] h-full right-[10%] top-0 bottom-0">
-            <ListDoctors doctors={showList} />
-          </div>) : null}
+            <div className="wide relative left-[10%] h-full right-[10%] top-0 bottom-0">
+              <ListDoctors doctors={showList} />
+            </div>
+          ) : null}
           {!doctors.loading && doctors.doctors.length > 0 ? (
-          <div className="small">
-            <ListDoctors doctors={doctors.doctors} />
-          </div>) : null }
+            <div className="small">
+              <ListDoctors doctors={doctors.doctors} />
+            </div>
+          ) : null }
           <button
             type="button"
             onClick={onRightClick}
