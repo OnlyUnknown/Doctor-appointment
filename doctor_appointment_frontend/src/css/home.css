@@ -1,14 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('tailwindcss/base');
+@import url('tailwindcss/components');
+@import url('tailwindcss/utilities');
 
-@media (max-width: 910px) {
+@media screen and (width <= 910px) {
   .on-right {
     display: none;
   }
 }
 
-@media (min-width: 475px) {
+@media screen and (width >= 475px) {
   .wide {
     display: block;
   }
@@ -18,7 +18,7 @@
   }
 }
 
-@media (max-width: 674px) {
+@media (width <= 674px) {
   .wide {
     display: none;
   }
@@ -35,10 +35,15 @@
 }
 
 .reservation {
-  background-color: rgba(150, 191, 1, 0.9);
+  background-color: rgb(150 191 1 / 90%);
 }
 
 #file-upload-button {
   background-color: transparent;
   border: none;
+}
+
+.round-shape {
+  border-radius: 50%;
+  border: 2px rgb(150 191 1) solid;
 }
