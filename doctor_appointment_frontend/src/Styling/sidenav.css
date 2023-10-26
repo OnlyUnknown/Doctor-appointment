@@ -66,7 +66,7 @@
   transition: 1s;
 }
 
-#mySidenav {
+#my-sidenav {
   width: 250px;
 }
 
@@ -79,7 +79,7 @@
 }
 
 @media only screen and (width <= 700px) {
-  #mySidenav {
+  #my-sidenav {
     width: 0%;
     position: fixed;
   }

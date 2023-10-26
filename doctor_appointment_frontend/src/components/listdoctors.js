@@ -14,10 +14,10 @@ export default function ListDoctors({ doctors }) {
             key={doctor.id}
             className="m-4 flex  w-64
             flex-col items-center justify-center
-             gap-4 rounded-lg bg-white p-2 shadow-md"
+             gap-4 rounded-lg bg-white p-2 big-pic"
           >
             <img
-              className="w-32 h-[160px] home-img"
+              className="w-32 h-[160px] home-img round-shape"
               src={doctor.image.url}
               alt={doctor.name}
             />

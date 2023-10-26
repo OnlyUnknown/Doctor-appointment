@@ -1,16 +1,16 @@
 /* Your custom styles */
-.tableContainer {
+.table-container {
   display: flex;
   justify-content: center;
   background-color: #367102;
   border-radius: 20px;
   height: 433px;
-  padding: 0 10px 10px 10px;
+  padding: 0 10px 10px;
   overflow: scroll;
-  color: rgba(255, 255, 255, 0.818);
+  color: rgb(255 255 255 / 81.8%);
 }
 
-.tableContainer::-webkit-scrollbar {
+.table-container::-webkit-scrollbar {
   display: none;
 }
 
@@ -51,20 +51,14 @@ tr:hover {
   display: flex;
   flex-direction: column;
   transition: 1s;
-  margin-left: 280px;
-  margin-right: 100px;
-  margin-top: 130px;
-  margin-bottom: 200px;
+  margin: 130px 100px 200px 280px;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (width <= 700px) {
   #main {
     display: flex;
     flex-direction: column;
     transition: 1s;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 50px;
-    margin-bottom: 00;
+    margin: 50px 0 00;
   }
 }
