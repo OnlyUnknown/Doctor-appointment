@@ -15,7 +15,7 @@ function MyAppointment() {
     <section id="main">
 
       <h1 className="text-3xl font-bold">My Appointments</h1>
-      <div className="tableContainer">
+      <div className="table-container">
         <table>
           <thead>
             <tr>
