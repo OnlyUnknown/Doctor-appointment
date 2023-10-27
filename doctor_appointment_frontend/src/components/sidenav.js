@@ -7,13 +7,13 @@ function SideNav() {
   const { currentUser } = useUser();
   const openNav = () => {
     if (
-      document.getElementById('mySidenav').style.width === '100%'
+      document.getElementById('my-sidenav').style.width === '100%'
       && window.innerWidth < 700
     ) {
-      document.getElementById('mySidenav').style.width = '0%';
+      document.getElementById('my-sidenav').style.width = '0%';
       document.getElementsByClassName('toggle-button')[0].style.transform = 'rotate(0deg)';
     } else if (window.innerWidth < 700) {
-      document.getElementById('mySidenav').style.width = '100%';
+      document.getElementById('my-sidenav').style.width = '100%';
       document.getElementsByClassName('toggle-button')[0].style.transform = 'rotate(180deg)';
     }
   };
@@ -27,7 +27,7 @@ function SideNav() {
         />
       </button>
 
-      <div id="mySidenav" className="sidenav fixed">
+      <div id="my-sidenav" className="sidenav fixed">
         <div className="logo relative top-0 left-[50%] sm:mb-16">
           <img
             alt="logo"
