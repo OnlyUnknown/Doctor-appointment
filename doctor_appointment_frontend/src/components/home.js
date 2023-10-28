@@ -33,7 +33,7 @@ export default function Home() {
   };
 
   return (
-    <div className="sm-[700px]:pt-[100px] pt-10 h-full overflow-y-scroll ">
+    <div className="sm-[700px]:pt-[100px] pt-10 h-full overflow-y-scroll">
       <div className="relative flex w-full flex-col items-center justify-center">
         <h1 className="text-3xl font-bold">
           LATEST DOCTORS

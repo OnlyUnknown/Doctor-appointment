@@ -22,7 +22,7 @@ function Logout() {
         <button
           onClick={handleLogout}
           type="submit"
-          className="text-red border border-1 border-red-600 p-2"
+          className="text-white bg-red-500 border border-1 border-red-600 p-2"
         >
           Logout
         </button>
