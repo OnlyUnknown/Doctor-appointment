@@ -18,7 +18,7 @@ function SideNav() {
     }
   };
   return (
-    <section className="sm:h-screen">
+    <section className="sm:h-screen side-border">
       <button type="button" className="hidden" onClick={openNav}>
         <img
           alt="togglebutton1"

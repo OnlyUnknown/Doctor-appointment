@@ -49,7 +49,7 @@ export default function Home() {
              justify-center items-center
              bg-gray-200 rounded-tr-full
              absolute left-0 top-[50%] bottom-0
-             rounded-br-full focus:bg-[#97bf0f]
+             rounded-br-full hover:bg-[#97bf0f]
               shadow-md"
           >
             <svg
@@ -88,7 +88,7 @@ export default function Home() {
             flex justify-center items-center
             absolute right-0 top-[50%] bottom-0
              bg-gray-200 rounded-tl-full
-             rounded-bl-full focus:bg-[#97bf0f]
+             rounded-bl-full hover:bg-[#97bf0f]
               shadow-md"
           >
             <svg
