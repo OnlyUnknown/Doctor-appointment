@@ -44,6 +44,7 @@ export default function Home() {
         <div className="relative w-full h-full flex flex-row items-center">
           <button
             type="button"
+            aria-label="Swipe left"
             onClick={onLeftClick}
             className="w-16 h-10 flex on-right
              justify-center items-center
@@ -83,6 +84,7 @@ export default function Home() {
           ) : null }
           <button
             type="button"
+            aria-label="Swipe right"
             onClick={onRightClick}
             className="w-16 h-10 on-right
             flex justify-center items-center

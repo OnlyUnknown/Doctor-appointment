@@ -171,6 +171,7 @@ function DoctorForm() {
         <Link to="/">
           <button
             type="button"
+            aria-label="Add a doctor"
             className="absolute bottom-4 left-0 w-16 h-10 flex invisible sm:visible  justify-center items-center rounded-tr-full rounded-br-full border border-amber-50 focus:bg-[#97bf0f] shadow-md"
           >
             <AddSVG />

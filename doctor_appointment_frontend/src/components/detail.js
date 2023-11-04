@@ -27,6 +27,7 @@ export default function Detail() {
         <Link to="/">
           <button
             type="button"
+            aria-label="Back"
             className="absolute
             bottom-4 w-16 h-10
             flex invisible sm:visible
