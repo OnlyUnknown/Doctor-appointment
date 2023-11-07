@@ -28,11 +28,11 @@ function SideNav() {
       </button>
 
       <div id="my-sidenav" className="sidenav fixed">
-        <div className="logo relative top-0 left-[50%] sm:mb-16">
+        <div className="logo relative top-0 left-[0%] sm:mb-16">
           <img
             alt="logo"
             src={LogDoc}
-            className="logo-image w-16 h-16  "
+            className="logo-image w-28 h-28 m-auto"
           />
         </div>
         {currentUser === null ? (
